@@ -25,10 +25,10 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .project-card {
+        .project-card, .section-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .project-card:hover {
+        .project-card:hover, .section-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 128, 128, 0.2);
         }
@@ -43,19 +43,6 @@
         .profile-photo {
             border: 3px solid #008080;
             box-shadow: 0 4px 8px rgba(0, 128, 128, 0.2);
-        }
-        .nav-link:not(:last-child) {
-            position: relative;
-        }
-        .nav-link:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: -1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 1.5rem;
-            width: 1px;
-            background-color: #ff6f61;
         }
         .nav-link {
             transition: color 0.3s ease, transform 0.2s ease;
@@ -150,9 +137,6 @@
             100% { transform: rotate(360deg); }
         }
         @media (max-width: 768px) {
-            .nav-link:not(:last-child)::after {
-                display: none;
-            }
             .nav-link:hover {
                 transform: none;
             }
@@ -179,14 +163,14 @@
         </div>
     </nav>
     <div class="container mx-auto px-4 py-8">
-        <div class="section fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="about">
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="about">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">About Me</h2>
             <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
                 <img src="assets/images/headshot.jpg" alt="Dr. Mohammad Harris Professional Headshot" class="w-48 h-48 rounded-full object-cover profile-photo">
                 <p class="text-lg">PhD-qualified research leader with over 6 years of experience managing cross-sector proof-of-concept projects in sustainable engineering. I specialize in leveraging AI and data analytics to deliver innovative thermal management solutions. I have secured €700,000+ in research grants, led international collaborations with Horizon Europe, Royal Society, and Alan Turing Institute, and published extensively in top journals. My leadership in Agile and Six Sigma methodologies ensures strategic programme delivery and real-world impact.</p>
             </div>
         </div>
-        <div class="section fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="skills">
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="skills">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Skills</h2>
             <div class="space-y-4">
                 <div>
@@ -207,7 +191,7 @@
                 </div>
             </div>
         </div>
-        <div class="section fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="projects">
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="projects">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Project Showcase</h2>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
                 <img src="https://via.placeholder.com/400x200?text=Micro-FloTec" alt="Micro-FloTec Project Visual" class="w-full h-48 object-cover rounded-lg mb-4">
@@ -243,7 +227,7 @@
                 <p><a href="https://github.com/itsharris/jht-international" target="_blank" class="text-coral-500 hover:underline">View Project Repository</a></p>
             </div>
         </div>
-        <div class="section fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="publications">
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="publications">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Publications</h2>
             <ul class="list-disc pl-6 space-y-2">
                 <li>Assessing Thermohydraulic Performance in Novel Micro Pin-Fin Heat Sinks: A Synergistic Experimental, Agile Manufacturing, and Machine Learning Approach. <em>International Journal of Heat and Mass Transfer</em>, Elsevier.</li>
@@ -252,7 +236,7 @@
                 <li>Integration of Industry 4.0 and Internet of Things in the Automotive and Motorsports Sectors: An Empirical Analysis. <em>SAE Technical Papers</em>.</li>
             </ul>
         </div>
-        <div class="section fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="certifications">
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="certifications">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Certifications & Awards</h2>
             <ul class="list-disc pl-6 space-y-2">
                 <li>PhD in Sustainable Engineering Technologies, University of Hertfordshire, 2024</li>
@@ -264,7 +248,7 @@
                 <li>EPC Hammerman Award Finalist, 2025</li>
             </ul>
         </div>
-        <div class="section fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="contact">
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="contact">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Contact</h2>
             <p class="text-lg">Email: <a href="mailto:itsharris@yahoo.com" class="text-coral-500 hover:underline">itsharris@yahoo.com</a></p>
             <div class="flex space-x-4 mt-2">
