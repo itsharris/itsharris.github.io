@@ -49,7 +49,8 @@
         }
         .nav-link:hover {
             color: #ff6f61;
-            transform: scale(1.1);
+            transform: scale(1.2);
+            /* Alternative: font-size: 1.1rem; */
         }
         .header-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.licdn.com/dms/image/v2/C4D16AQG4ikMRWJNObQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1586537474022?e=1755129600&v=beta&t=QZwW4GbzYsTEujCI92rd0GBDSy36jXFHUZXoHdV-DZI&auto=format&fit=crop&w=1920&q=80');
@@ -79,6 +80,7 @@
         .progress-fill {
             background-color: #008080;
             height: 100%;
+            width: 0;
             transition: width 1s ease-in-out;
         }
         .social-icon {
@@ -136,9 +138,17 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .section-card h2::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #008080;
+            margin: 8px 0 16px;
+        }
         @media (max-width: 768px) {
             .nav-link:hover {
-                transform: none;
+                /* transform: none; */ /* Removed to enable scale on mobile */
             }
         }
     </style>
@@ -175,19 +185,19 @@
             <div class="space-y-4">
                 <div>
                     <p class="font-semibold">Project Management (Agile, Six Sigma, TQM)</p>
-                    <div class="progress-bar"><div class="progress-fill w-[90%]"></div></div>
+                    <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Tools (Jira, MS Project, ANSYS, MATLAB)</p>
-                    <div class="progress-bar"><div class="progress-fill w-[85%]"></div></div>
+                    <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Technical Skills (Python, TensorFlow, SQL)</p>
-                    <div class="progress-bar"><div class="progress-fill w-[80%]"></div></div>
+                    <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Soft Skills (Leadership, Stakeholder Management)</p>
-                    <div class="progress-bar"><div class="progress-fill w-[95%]"></div></div>
+                    <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
                 </div>
             </div>
         </div>
@@ -281,6 +291,22 @@
             });
         }, { threshold: 0.1 });
         sections.forEach(section => observer.observe(section));
+
+        // Progress bar animation
+        const skillsSection = document.getElementById('skills');
+        const progressBars = document.querySelectorAll('.progress-fill');
+        const progressObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    progressBars.forEach(bar => {
+                        const targetWidth = bar.getAttribute('data-width');
+                        bar.style.width = targetWidth;
+                    });
+                    progressObserver.unobserve(skillsSection);
+                }
+            });
+        }, { threshold: 0.5 });
+        progressObserver.observe(skillsSection);
 
         // Back-to-top button
         const backToTop = document.getElementById('backToTop');
