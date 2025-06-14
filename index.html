@@ -12,7 +12,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     <style>
+        html {
+            min-height: 100vh;
+            height: 100%;
+            background-color: #f3f4f6; /* bg-gray-100 */
+            overscroll-behavior: none;
+        }
         body {
+            min-height: 100vh;
+            height: 100%;
+            background-color: #f3f4f6; /* bg-gray-100 */
+            margin: 0;
+            padding: 0;
             font-family: 'Roboto', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -46,6 +57,7 @@
             position: sticky;
             top: 0;
             z-index: 10;
+            margin-top: 0;
         }
         .gradient-bg {
             background: linear-gradient(135deg, #008080 0%, #1a3c5e 100%);
@@ -65,11 +77,12 @@
             color: #ff6f61;
             transform: scale(1.2);
         }
-        .header-bg {
+        header.header-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/header-bg.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-color: #f3f4f6; /* Fallback */
         }
         .header-text {
             opacity: 0;
@@ -131,9 +144,9 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #1a3c5e;
+            width: 100vw;
+            height: 100vh;
+            background-color: #f3f4f6; /* Match bg-gray-100 */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -170,12 +183,12 @@
         }
         @media (max-width: 768px) {
             .nav-link:hover {
-                /* transform: none; */ /* Removed to enable scale on mobile */
+                /* transform: none; */ /* Enable scale on mobile */
             }
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 min-h-screen">
     <div class="preloader" id="preloader">
         <div class="loader"></div>
     </div>
@@ -273,7 +286,7 @@
         </div>
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="publications">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Publications</h2>
-            <ul class="list-disc pl-6">
+            <ul class="list-disc pl-6 space-y-2">
                 <li>Assessing Thermohydraulic Performance in Novel Micro Pin-Fin Heat Sinks: A Synergistic Experimental, Agile Manufacturing, and Machine Learning Approach. <em>International Journal of Heat and Mass Transfer</em>, Elsevier.</li>
                 <li>Heat Transfer Optimisation Using Novel Biomorphic Pin-Fin Heat Sinks: An Integrated Approach via Design for Manufacturing, Numerical Simulation, and Machine Learning. <em>Thermal Science and Engineering Progress</em>, Elsevier.</li>
                 <li>An Investigation on Engine Mass Airflow Sensor Production via TQM, TPM, and Six Sigma Practices. <em>Operations Research Forum</em>, Springer Nature.</li>
@@ -282,40 +295,40 @@
         </div>
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="certifications">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Certifications & Awards</h2>
-            <ul class="list-disc pl-6">
+            <ul class="list-disc pl-6 space-y-2">
                 <li>PhD in Sustainable Engineering Technologies, University of Hertfordshire, 2024</li>
-                <li>Price Media Law Moot Court Competition</li>
+                <li>Project Management Professional (PMP), PMI, Exam Pending</li>
                 <li>Associate Fellow of Higher Education (AFHEA)</li>
-                <li>Member of Engineering Council UK</li>
-                <li>Global Talent Pipeline</li>
-                <li>“Learning Innovation” Award, Hackathon</li>
-                <li>EPC Innovation Awards Finalist</li>
+                <li>Member of IET (MIET)</li>
+                <li>Global Talent Endorsement, Royal Academy of Engineering</li>
+                <li>“Learning Machine” Award, Alan Turing Institute, 2022</li>
+                <li>EPC Hammerman Award Finalist, 2025</li>
             </ul>
         </div>
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="contact">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Contact</h2>
             <p class="text-lg">Email: <a href="mailto:itsharris@yahoo.com" class="text-coral-500 hover:underline">itsharris@yahoo.com</a></p>
             <div class="flex space-x-4 mt-2">
-                <a href="https://www.linkedin.com/in/itsharris" target="_blank" class="social-icon text-teal-800"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/itsharris" target="_blank" class="social-icon text-teal-800"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/itsharris" target="_blank" class="social-icon text-teal-800 text-2xl" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/itsharris" target="_blank" class="social-icon text-teal-800 text-2xl" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
             </div>
-            <a href="mailto:itsharris@yahoo.com" class="inline-block mt-4 bg-coral-500 text-white px-4 py-2 rounded hover:bg-coral-600">Get in Touch</a>
+            <a href="mailto:itsharris@yahoo.com" class="inline-block mt-4 bg-coral-500 text-white px-6 py-2 rounded-lg hover:bg-coral-600 transition">Get in Touch</a>
         </div>
     </div>
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
-    <footer class="gradient-bg text-white text-center py-4">
-        <p>&copy; 2025 Dr. Mohammad Harris. All rights reserved.</p>
+    <footer class="gradient-bg text-white py-4">
+        <p class="text-center">© 2025 Dr. Mohammad Harris. All rights reserved.</p>
     </footer>
     <script>
-        // Smooth scrolling
+        // Smooth scrolling for navigation
         document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', e => {
+            anchor.addEventListener('click', (e) => {
                 e.preventDefault();
                 document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Fade-in animation
+        // Fade-in animation on scroll
         const sections = document.querySelectorAll('.fade-in');
         try {
             const observer = new IntersectionObserver(entries => {
@@ -330,12 +343,12 @@
             console.warn('Fade-in observer failed:', e);
         }
 
-        // Back-to-top
+        // Back-to-top button
         const backToTop = document.getElementById('backToTop');
         window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 300);
+            backToTop.classList.toggle('visible', window.scrollY > 250);
         });
-        backToTop.addEventListener('click', e => {
+        backToTop.addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
