@@ -49,8 +49,7 @@
         }
         .nav-link:hover {
             color: #ff6f61;
-            transform: scale(1.2);
-            /* Alternative: font-size: 1.1rem; */
+            transform: scale(1.1);
         }
         .header-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://media.licdn.com/dms/image/v2/C4D16AQG4ikMRWJNObQ/profile-displaybackgroundimage-shrink_350_1400/profile-displaybackgroundimage-shrink_350_1400/0/1586537474022?e=1755129600&v=beta&t=QZwW4GbzYsTEujCI92rd0GBDSy36jXFHUZXoHdV-DZI&auto=format&fit=crop&w=1920&q=80');
@@ -80,7 +79,6 @@
         .progress-fill {
             background-color: #008080;
             height: 100%;
-            width: 0;
             transition: width 1s ease-in-out;
         }
         .social-icon {
@@ -148,7 +146,7 @@
         }
         @media (max-width: 768px) {
             .nav-link:hover {
-                /* transform: none; */ /* Removed to enable scale on mobile */
+                transform: none;
             }
         }
     </style>
@@ -185,19 +183,19 @@
             <div class="space-y-4">
                 <div>
                     <p class="font-semibold">Project Management (Agile, Six Sigma, TQM)</p>
-                    <div class="progress-bar"><div class="progress-fill" data-width="90%"></div></div>
+                    <div class="progress-bar"><div class="progress-fill w-[90%]"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Tools (Jira, MS Project, ANSYS, MATLAB)</p>
-                    <div class="progress-bar"><div class="progress-fill" data-width="85%"></div></div>
+                    <div class="progress-bar"><div class="progress-fill w-[85%]"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Technical Skills (Python, TensorFlow, SQL)</p>
-                    <div class="progress-bar"><div class="progress-fill" data-width="80%"></div></div>
+                    <div class="progress-bar"><div class="progress-fill w-[80%]"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Soft Skills (Leadership, Stakeholder Management)</p>
-                    <div class="progress-bar"><div class="progress-fill" data-width="95%"></div></div>
+                    <div class="progress-bar"><div class="progress-fill w-[95%]"></div></div>
                 </div>
             </div>
         </div>
@@ -283,30 +281,18 @@
 
         // Fade-in animation on scroll
         const sections = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-        sections.forEach(section => observer.observe(section));
-
-        // Progress bar animation
-        const skillsSection = document.getElementById('skills');
-        const progressBars = document.querySelectorAll('.progress-fill');
-        const progressObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    progressBars.forEach(bar => {
-                        const targetWidth = bar.getAttribute('data-width');
-                        bar.style.width = targetWidth;
-                    });
-                    progressObserver.unobserve(skillsSection);
-                }
-            });
-        }, { threshold: 0.5 });
-        progressObserver.observe(skillsSection);
+        try {
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => observer.observe(section));
+        } catch (e) {
+            console.warn('Fade-in observer failed:', e);
+        }
 
         // Back-to-top button
         const backToTop = document.getElementById('backToTop');
@@ -322,9 +308,14 @@
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
-                preloader.classList.add('hidden');
-            }, 100);
+                if (preloader) preloader.classList.add('hidden');
+            }, 500);
         });
+        // Fallback: Hide preloader after 3 seconds
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            if (preloader) preloader.classList.add('hidden');
+        }, 3000);
     </script>
 </body>
 </html>
