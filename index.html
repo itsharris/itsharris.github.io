@@ -80,6 +80,8 @@
         .progress-fill {
             background-color: #008080;
             height: 100%;
+            width: 0; /* Start at 0 width for animation */
+            transition: width 1.5s ease-in-out; /* Smooth transition for fill animation */
         }
         .progress-bar::after {
             content: attr(data-tooltip);
@@ -201,35 +203,35 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
                     <p class="font-semibold">Project Management Methodologies (Agile, Six Sigma, TQM)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" style="width: 95%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 6+ years" data-progress="95"><div class="progress-fill"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Engineering Simulation Tools (ANSYS, MATLAB)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 5+ years"><div class="progress-fill" style="width: 90%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 5+ years" data-progress="90"><div class="progress-fill"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Project Management Tools (Jira, MS Project)</p>
-                    <div class="progress-bar" data-tooltip="Advanced: 4+ years"><div class="progress-fill" style="width: 85%"></div></div>
+                    <div class="progress-bar" data-tooltip="Advanced: 4+ years" data-progress="85"><div class="progress-fill"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Programming & AI (Python, TensorFlow)</p>
-                    <div class="progress-bar" data-tooltip="Advanced: 4+ years"><div class="progress-fill" style="width: 80%"></div></div>
+                    <div class="progress-bar" data-tooltip="Advanced: 4+ years" data-progress="80"><div class="progress-fill"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Data Analytics (SQL, Excel, Minitab)</p>
-                    <div class="progress-bar" data-tooltip="Proficient: 3+ years"><div class="progress-fill" style="width: 75%"></div></div>
+                    <div class="progress-bar" data-tooltip="Proficient: 3+ years" data-progress="75"><div class="progress-fill"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Research & Grant Writing (Horizon Europe, Royal Society)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 5+ years"><div class="progress-fill" style="width: 90%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 5+ years" data-progress="90"><div class="progress-fill"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Leadership & Collaboration (Stakeholder Management, Team Leadership)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" style="width: 95%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 6+ years" data-progress="95"><div class="progress-fill"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Domain Expertise (Thermal Management, Sustainable Engineering)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" style="width: 90%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 6+ years" data-progress="90"><div class="progress-fill"></div></div>
                 </div>
             </div>
         </div>
@@ -319,6 +321,17 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
+                    // Animate progress bars when skills section is visible
+                    if (entry.target.id === 'skills') {
+                        const progressBars = entry.target.querySelectorAll('.progress-bar');
+                        progressBars.forEach(bar => {
+                            const fill = bar.querySelector('.progress-fill');
+                            const progress = bar.getAttribute('data-progress');
+                            setTimeout(() => {
+                                fill.style.width = `${progress}%`;
+                            }, 100); // Slight delay for smoother effect
+                        });
+                    }
                 }
             });
         }, { threshold: 0.1 });
