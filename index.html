@@ -49,7 +49,7 @@
         }
         .nav-link:hover {
             color: #ff6f61;
-            transform: scale(1.1);
+            transform: scale(1.2);
         }
         .header-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1516321310766-61f6d7f37f1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
@@ -80,8 +80,6 @@
         .progress-fill {
             background-color: #008080;
             height: 100%;
-            width: 0;
-            transition: width 1s ease-in-out;
         }
         .progress-bar::after {
             content: attr(data-tooltip);
@@ -203,35 +201,35 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <div>
                     <p class="font-semibold">Project Management Methodologies (Agile, Six Sigma, TQM)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" data-width="95%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" style="width: 95%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Engineering Simulation Tools (ANSYS, MATLAB)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 5+ years"><div class="progress-fill" data-width="90%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 5+ years"><div class="progress-fill" style="width: 90%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Project Management Tools (Jira, MS Project)</p>
-                    <div class="progress-bar" data-tooltip="Advanced: 4+ years"><div class="progress-fill" data-width="85%"></div></div>
+                    <div class="progress-bar" data-tooltip="Advanced: 4+ years"><div class="progress-fill" style="width: 85%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Programming & AI (Python, TensorFlow)</p>
-                    <div class="progress-bar" data-tooltip="Advanced: 4+ years"><div class="progress-fill" data-width="80%"></div></div>
+                    <div class="progress-bar" data-tooltip="Advanced: 4+ years"><div class="progress-fill" style="width: 80%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Data Analytics (SQL, Excel, Minitab)</p>
-                    <div class="progress-bar" data-tooltip="Proficient: 3+ years"><div class="progress-fill" data-width="75%"></div></div>
+                    <div class="progress-bar" data-tooltip="Proficient: 3+ years"><div class="progress-fill" style="width: 75%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Research & Grant Writing (Horizon Europe, Royal Society)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 5+ years"><div class="progress-fill" data-width="90%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 5+ years"><div class="progress-fill" style="width: 90%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Leadership & Collaboration (Stakeholder Management, Team Leadership)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" data-width="95%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" style="width: 95%"></div></div>
                 </div>
                 <div>
                     <p class="font-semibold">Domain Expertise (Thermal Management, Sustainable Engineering)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" data-width="90%"></div></div>
+                    <div class="progress-bar" data-tooltip="Expert: 6+ years"><div class="progress-fill" style="width: 90%"></div></div>
                 </div>
             </div>
         </div>
@@ -325,22 +323,6 @@
             });
         }, { threshold: 0.1 });
         sections.forEach(section => observer.observe(section));
-
-        // Progress bar animation
-        const skillsSection = document.getElementById('skills');
-        const progressBars = document.querySelectorAll('.progress-fill');
-        const progressObserver = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    progressBars.forEach(bar => {
-                        const targetWidth = bar.getAttribute('data-width');
-                        bar.style.width = targetWidth;
-                    });
-                    progressObserver.unobserve(skillsSection);
-                }
-            });
-        }, { threshold: 0.5 });
-        progressObserver.observe(skillsSection);
 
         // Back-to-top button
         const backToTop = document.getElementById('backToTop');
