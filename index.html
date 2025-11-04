@@ -1,22 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mohammad Harris - Project Management Portfolio</title>
-    <meta name="description" content="Project Management Portfolio of Dr. Mohammad Harris, PhD in Sustainable Engineering, specializing in AI-driven thermal management and cross-sector PoC projects.">
+    <title>Dr. Mohammad Harris - Climate Tech & AI Portfolio</title>
+    <meta name="description" content="Climate Technology Entrepreneur & AI Expert. PhD-qualified engineer specializing in decarbonisation solutions, sustainable engineering, and AI-driven innovation. £800K+ research funding secured.">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=MH">
+    
+    <!-- Fathom Analytics (Replace YOUR_SITE_ID) -->
+    <script>
+        (function(f, a, t, h, o, m){
+            a[h]=a[h]||function(){
+                (a[h].q=a[h].q||[]).push(arguments)
+            };
+            o=f.createElement('script'),
+            m=f.getElementsByTagName('script')[0];
+            o.async=1; o.src=t; o.id='fathom-script';
+            m.parentNode.insertBefore(o,m)
+        })(document, window, '//your-fathom-domain.com/tracker.js', 'fathom');
+        fathom('set', 'siteId', 'YOUR_SITE_ID'); // Replace with your Site ID
+        fathom('trackPageview');
+    </script>
+
     <style>
         :root {
-        overscroll-behavior: none;
-        overflow-x: hidden;
+            --bg-primary: #f3f4f6;
+            --bg-secondary: #ffffff;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --accent: #008080;
+            --accent-hover: #ff6f61;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --border: #e5e7eb;
+            overscroll-behavior: none;
+            overflow-x: hidden;
+        }
+        [data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #0ea5e9;
+            --accent-hover: #ff6f61;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.25);
+            --border: #334155;
         }
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+        .bg-gray-100 { background-color: var(--bg-primary) !important; }
+        .text-gray-800 { color: var(--text-primary) !important; }
+        .text-gray-600 { color: var(--text-secondary) !important; }
+        .bg-white { background-color: var(--bg-secondary) !important; }
+        .bg-gray-50 { background-color: var(--bg-secondary) !important; }
+        .bg-teal-800 { color: var(--accent) !important; }
+        .text-teal-800 { color: var(--accent) !important; }
+        .text-teal-700 { color: var(--accent) !important; }
+        .text-teal-600 { color: var(--accent) !important; }
+        .bg-teal-600 { background-color: var(--accent) !important; }
+        .hover\:bg-teal-700:hover { background-color: var(--accent-hover) !important; }
+        .border-gray-200 { border-color: var(--border) !important; }
+        .shadow-lg { box-shadow: var(--card-shadow) !important; }
         h1, h2, h3 {
             font-family: 'Poppins', sans-serif;
         }
@@ -40,21 +90,26 @@
             position: sticky;
             top: 0;
             z-index: 10;
-        }
-        .gradient-bg {
-            background: linear-gradient(135deg, #008080 0%, #1a3c5e 100%);
+            background: linear-gradient(135deg, var(--accent) 0%, #1a3c5e 100%);
         }
         .profile-photo {
-            border: 3px solid #008080;
+            border: 3px solid var(--accent);
             box-shadow: 0 4px 8px rgba(0, 128, 128, 0.2);
         }
         .nav-link {
-            font-size: 18px; /* Or any size, e.g., 1.25rem, 20px */
+            font-size: 16px;
             transition: color 0.3s ease, transform 0.2s ease;
+            position: relative;
+            color: #ffffff;
         }
         .nav-link:hover {
-            color: #ff6f61;
-            transform: scale(1.2);
+            color: var(--accent-hover);
+            transform: scale(1.1);
+        }
+        .nav-link.active {
+            color: var(--accent-hover) !important;
+            transform: scale(1.1);
+            font-weight: bold;
         }
         .header-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/banner.jpeg');
@@ -76,48 +131,31 @@
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
         .progress-bar {
-            background-color: #e5e7eb;
+            background-color: var(--border);
             height: 8px;
             border-radius: 4px;
             overflow: hidden;
             position: relative;
         }
         .progress-fill {
-            background-color: #008080;
+            background-color: var(--accent);
             height: 100%;
-            width: 0; /* Start at 0 width for animation */
-            transition: width 1.5s ease-in-out; /* Smooth transition for fill animation */
-        }
-        .progress-bar::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #008080;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 12px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-        .progress-bar:hover::after {
-            opacity: 1;
+            width: 0;
+            transition: width 1.5s ease-in-out;
         }
         .social-icon {
             transition: color 0.3s ease, transform 0.3s ease;
+            color: var(--accent);
         }
         .social-icon:hover {
-            color: #ff6f61;
+            color: var(--accent-hover);
             transform: scale(1.2);
         }
         .back-to-top {
             position: fixed;
             bottom: 2rem;
             right: 2rem;
-            background-color: #008080;
+            background-color: var(--accent);
             color: white;
             width: 3rem;
             height: 3rem;
@@ -151,7 +189,7 @@
         }
         .loader {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #ff6f61;
+            border-top: 4px solid var(--accent-hover);
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -166,12 +204,98 @@
             display: block;
             width: 100%;
             height: 2px;
-            background-color: #008080;
+            background-color: var(--accent);
             margin: 8px 0 16px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            margin: 4px;
+            background-color: #e0f2f1;
+            color: var(--accent);
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        [data-theme="dark"] .badge {
+            background-color: #0f766e;
+            color: #ecfdf5;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #e0f2f1 0%, #b2dfdb 100%);
+            border-left: 4px solid var(--accent);
+            padding: 16px;
+            margin: 16px 0;
+            border-radius: 8px;
+        }
+        [data-theme="dark"] .highlight-box {
+            background: linear-gradient(135deg, #0f766e 0%, #115e59 100%);
+            border-left: 4px solid var(--accent);
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .theme-toggle:hover {
+            transform: scale(1.2);
+        }
+        .cv-download {
+            background-color: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin: 0.5rem;
+        }
+        .cv-download:hover {
+            background-color: var(--accent-hover);
+        }
+        /* Form Styles */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.75rem;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            background-color: var(--bg-secondary);
+            color: var(--text-primary);
+        }
+        .contact-form button {
+            width: 100%;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: var(--accent-hover);
         }
         @media (max-width: 768px) {
             .nav-link:hover {
                 transform: none;
+            }
+            .nav-link {
+                font-size: 14px;
+                padding: 0.5rem 1rem;
+            }
+            nav .container {
+                flex-direction: column;
+                gap: 0.5rem;
             }
         }
     </style>
@@ -180,192 +304,392 @@
     <div class="preloader" id="preloader">
         <div class="loader"></div>
     </div>
+
     <header class="header-bg text-white text-center py-16">
         <h1 class="text-4xl md:text-5xl font-bold mb-2 header-text">Dr. Mohammad Harris</h1>
-        <p class="text-lg md:text-xl header-text">Project Management & Research Leader | PhD, MRes, BEng (Hons), AFHEA, MIET </p>
-        <p class="text-base md:text-lg mt-1 header-text">Specializing in AI-Driven Sustainable Energy and Engineering Technologies and Cross-Sector Projects</p>
+        <p class="text-lg md:text-xl header-text">Climate Tech Entrepreneur | AI-Driven Decarbonisation | £800K+ Research Funding</p>
+        <p class="text-base md:text-lg mt-1 header-text">PhD, MRes, BEng (Hons) | AFHEA, MIET, CEng (Pending) | RAEng Global Talent</p>
     </header>
+
     <nav class="gradient-bg py-4 shadow-lg">
-        <div class="container mx-auto flex justify-center space-x-8 md:space-x-8">
+        <div class="container mx-auto flex flex-wrap justify-center gap-4 md:gap-6 px-4 items-center">
             <a href="#about" class="nav-link text-white font-semibold">About</a>
+            <a href="#current" class="nav-link text-white font-semibold">Current Work</a>
             <a href="#skills" class="nav-link text-white font-semibold">Skills</a>
             <a href="#projects" class="nav-link text-white font-semibold">Projects</a>
+            <a href="#recognition" class="nav-link text-white font-semibold">Recognition</a>
             <a href="#publications" class="nav-link text-white font-semibold">Publications</a>
-            <a href="#certifications" class="nav-link text-white font-semibold">Certifications</a>
             <a href="#contact" class="nav-link text-white font-semibold">Contact</a>
+            <!-- Dark Mode Toggle -->
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-sun"></i>
+            </button>
+            <!-- Download CV Button -->
+            <a href="#" id="download-cv" class="cv-download">
+                <i class="fas fa-download"></i> Download CV
+            </a>
         </div>
     </nav>
-    <div class="container mx-auto px-12 py-12">
+
+    <div class="container mx-auto px-4 md:px-12 py-12">
+        <!-- About -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="about">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">About Me</h2>
             <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                <img src="assets/images/headshot.jpg" alt="Dr. Mohammad Harris Professional Headshot" class="w-48 h-48 rounded-full object-cover profile-photo">
-                <p class="text-lg">PhD-qualified research leader with 6+ years of experience managing cross-sector proof-of-concept projects in sustainable engineering and energy technologies. I specialize in leveraging AI and data analytics to deliver impactful solutions. I have managed and secured funding exceeding $1,000,000 (One Million USD) for research and development, managed international collaborations for various organisations, including European Commission's Horizon Europe, The Royal Society, and Alan Turing Institute, and published extensively in top journals. My leadership ensures strategic programme delivery and real-world impact. Currently focusing on Industry 4.0-driven circular economy and advancing United Nations' Sustainable Development Goals (SDGs). </p>
+                <img src="assets/images/headshot.jpg" alt="Dr. Mohammad Harris" class="w-48 h-48 rounded-full object-cover profile-photo">
+                <div>
+                    <p class="text-lg mb-4">PhD-qualified engineer and climate technology entrepreneur with 6+ years of experience leading cross-sector innovation in sustainable engineering and AI-driven solutions. I specialize in translating cutting-edge research into scalable, impactful technologies that address global environmental challenges.</p>
+                    <p class="text-lg mb-4">I have successfully secured over <strong>£800,000</strong> in competitive research and commercial funding from prestigious organizations including the European Commission's Horizon Europe, The Royal Society, EPSRC, and the Alan Turing Institute. My work spans international collaborations with 20+ partners and has resulted in 10+ peer-reviewed publications in leading journals.</p>
+                    <p class="text-lg">Currently, I'm building climate tech ventures through <strong>Carbon13</strong> in Cambridge—one of 80 innovators selected from a competitive applicant pool—focusing on AI-driven decarbonisation solutions with strategic partnerships including the University of Cambridge, Barclays, Eagle Labs, and ARM.</p>
+                </div>
+            </div>
+            <div class="highlight-box mt-6">
+                <p class="font-semibold text-teal-800 mb-2"><i class="fas fa-globe"></i> Languages & Global Reach</p>
+                <p>Fluent in <strong>English</strong> and <strong>Bangla</strong> | Proficient in <strong>Hindi</strong> and <strong>Urdu</strong> (B1) | Basic <strong>French</strong> and <strong>Spanish</strong> (A2)</p>
             </div>
         </div>
+
+        <!-- Current Work -->
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="current">
+            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Current Work</h2>
+            <div class="project-card bg-gray-50 rounded-lg p-5">
+                <div class="flex items-start gap-4 mb-4">
+                    <i class="fas fa-rocket text-teal-800 text-4xl mt-1"></i>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-teal-800">Climate Technology Entrepreneur</h3>
+                        <p class="text-lg text-gray-600 mb-2"><strong>Carbon13 Venture Builder</strong> | Cambridge, UK | Sep 2025 – Present</p>
+                    </div>
+                </div>
+                <p class="mb-3"><strong>Selected as one of 80 innovators</strong> from hundreds of applicants for Cambridge's leading climate tech venture builder focused on decarbonisation solutions.</p>
+                <p class="mb-2"><strong>Key Achievements:</strong></p>
+                <ul class="list-disc pl-6 space-y-1 mb-3">
+                    <li>Co-designing scalable, AI-driven sustainable engineering solutions through cross-functional collaboration</li>
+                    <li>Building strategic partnerships with University of Cambridge, Barclays, Eagle Labs, and ARM</li>
+                    <li>Developing expertise in customer discovery, product validation, and pre-seed fundraising</li>
+                    <li>Presenting innovative concepts to stakeholders and investors in the climate tech ecosystem</li>
+                </ul>
+                <div class="mt-4">
+                    <span class="badge">Climate Tech</span>
+                    <span class="badge">Venture Building</span>
+                    <span class="badge">AI Innovation</span>
+                    <span class="badge">Decarbonisation</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="skills">
-            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Skills</h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <div>
-                    <p class="font-semibold">Project Management Methodologies (Agile, Six Sigma, Waterfall)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years" data-progress="95"><div class="progress-fill"></div></div>
+            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Core Competencies</h2>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-tasks"></i> Project Management & Leadership</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div><p class="font-semibold mb-1">Project Methodologies (Agile, Waterfall, Lean Six Sigma)</p><div class="progress-bar" data-progress="95"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">PM Tools (Jira, MS Project, Asana)</p><div class="progress-bar" data-progress="85"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">Stakeholder Engagement & Team Leadership</p><div class="progress-bar" data-progress="90"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">Budget & Risk Management</p><div class="progress-bar" data-progress="90"><div class="progress-fill"></div></div></div>
                 </div>
-                <div>
-                    <p class="font-semibold">Computer-Aided Engineering Tools (Solidworks, ANSYS, MATLAB)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 10+ years" data-progress="90"><div class="progress-fill"></div></div>
+            </div>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-leaf"></i> Sustainability & Innovation</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div><p class="font-semibold mb-1">Circular Economy Implementation</p><div class="progress-bar" data-progress="90"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">Life Cycle Assessment (LCA)</p><div class="progress-bar" data-progress="85"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">Funding & Grant Management</p><div class="progress-bar" data-progress="90"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">Product Commercialisation</p><div class="progress-bar" data-progress="85"><div class="progress-fill"></div></div></div>
                 </div>
-                <div>
-                    <p class="font-semibold">Project Management Tools (Asana, MS Project, Jira)</p>
-                    <div class="progress-bar" data-tooltip="Advanced: 6+ years" data-progress="85"><div class="progress-fill"></div></div>
+            </div>
+            <div class="mb-6">
+                <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-robot"></i> AI & Data Science</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div><p class="font-semibold mb-1">Machine Learning (Python, TensorFlow)</p><div class="progress-bar" data-progress="85"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">Data Analytics (Pandas, NumPy, SQL)</p><div class="progress-bar" data-progress="80"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">Neural Networks & Deep Learning</p><div class="progress-bar" data-progress="80"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">MATLAB Programming</p><div class="progress-bar" data-progress="90"><div class="progress-fill"></div></div></div>
                 </div>
-                <div>
-                    <p class="font-semibold">Programming & AI (Python, TensorFlow, Keras)</p>
-                    <div class="progress-bar" data-tooltip="Advanced: 6+ years" data-progress="80"><div class="progress-fill"></div></div>
-                </div>
-                <div>
-                    <p class="font-semibold">Data Analytics (SQL, Numpy, Pandas)</p>
-                    <div class="progress-bar" data-tooltip="Proficient: 3+ years" data-progress="75"><div class="progress-fill"></div></div>
-                </div>
-                <div>
-                    <p class="font-semibold">Research & Grant Writing (Horizon Europe, Royal Society, EPSRC)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 5+ years" data-progress="90"><div class="progress-fill"></div></div>
-                </div>
-                <div>
-                    <p class="font-semibold">Leadership & Collaboration (Stakeholder Management, Team Leadership, Commercial Awareness)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years" data-progress="90"><div class="progress-fill"></div></div>
-                </div>
-                <div>
-                    <p class="font-semibold">Domain Expertise (Thermal Management, Sustainable Engineering)</p>
-                    <div class="progress-bar" data-tooltip="Expert: 6+ years" data-progress="90"><div class="progress-fill"></div></div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-drafting-compass"></i> Engineering Design & Simulation</h3>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div><p class="font-semibold mb-1">CAD/CAE (SolidWorks, ANSYS)</p><div class="progress-bar" data-progress="90"><div class="progress-fill"></div></div></div>
+                    <div><p class="font-semibold mb-1">CFD & Thermal Simulation</p><div class="progress-bar" data-progress="90"><div class="progress-fill"></div></div></div>
                 </div>
             </div>
         </div>
+
+        <!-- Projects -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="projects">
-            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Project Showcase</h2>
+            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Featured Projects</h2>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/microflotec.jpeg" alt="Micro-FloTec Project Visual" class="w-full h-96 object-cover rounded-lg mb-4">
-                <h3 class="text-2xl font-semibold text-teal-800">Micro-FloTec: Microscale Flow and Heat Transfer Technologies</h3>
-                <p><strong>Role:</strong> Project Research Manager (Horizon Europe, 2022-2025)</p>
-                <p><strong>Objective:</strong> Develop high-performance, low-power microscale flow and heat transfer technologies for sustainable engineering.</p>
-                <p><strong>Challenges:</strong> Coordinating 17+ international partners, aligning technical specifications, and securing a €800,000+ budget.</p>
-                <p><strong>Solutions:</strong> Utilized Waterfall/Agile methodologies, conducted various CFD simulations and experiments, machine-learning driven optimisation.</p>
-                <p><strong>Outcomes:</strong> Delivered IPs and PoC ahead of schedule and contributed to publications in top journals and conferences.</p>
-                <p><strong>Tools Used:</strong> Python, ANSYS, SolidWorks, EU SYGMA System</p>
-                <center><p><h3><a href="https://www.microflotec.com/" target="_blank" class="text-coral-500 hover:underline"><b> ---View Project Homepage--- </b></a></h3></p></centre>
-            </div>
-               <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/phd.jpg" alt="Redefining Industry Visual" class="w-full h-96 object-cover rounded-lg mb-4">
-                <h3 class="text-2xl font-semibold text-teal-800">Enhancing Thermal Management Technologies with Machine Learning</h3>
-                <p><strong>Role:</strong> Research Manager/Principal Investigator (2021-2025)</p>
-                <p><strong>Objective:</strong> Develop advanced thermal management for electronics using bio-inspired designs and AI.</p>
-                <p><strong>Challenges:</strong> Limited heat sink performance, complex designs, scalability, and computational demands.</p>
-                <p><strong>Solutions:</strong> Created a new Sustainable Hybrid Intelligence Framework (SHIF) that combined machine learning, simulations, experiments, and bio-inspired structures with Lean manufacturing.</p>
-                <p><strong>Outcomes:</strong> 30-70% better heat transfer, 60-70% less computation, 43% cost reduction, 29% energy savings, 19% lower emissions.</p>
-                <p><strong>Tools Used:</strong> Python, machine learning, numerical simulations, Lean, Agile, DfM.</p>
-                <center><p><a href="https://researchprofiles.herts.ac.uk/en/projects/enhancing-heat-transfer-and-thermal-management-efficiency-in-micr" target="_blank" class="text-coral-500 hover:underline"><b>---Learn More---</b></a></p></center>
+                <img src="assets/images/microflotec.jpeg" alt="Micro-FloTec Project" class="w-full h-96 object-cover rounded-lg mb-4">
+                <h3 class="text-2xl font-semibold text-teal-800">Micro-FloTec: Advanced Heat Transfer Technologies</h3>
+                <p class="text-gray-600 mb-3"><strong>Horizon Europe</strong> | Project Research Manager | 2022-2025</p>
+                <p class="mb-2">Pioneer compact heat transfer and thermal management systems for EVs, aerospace, and renewable energy storage. Coordinated 17+ international partners with €800,000+ budget.</p>
+                <p class="mb-3"><strong>Impact:</strong> Delivered IP and proof-of-concept ahead of schedule with multiple publications in top-tier journals.</p>
+                <div class="mb-4">
+                    <span class="badge">Horizon Europe</span>
+                    <span class="badge">Heat Transfer</span>
+                    <span class="badge">ML Optimization</span>
+                </div>
+                <p class="text-center"><a href="https://www.microflotec.com/" target="_blank" class="text-teal-600 hover:underline font-semibold"><i class="fas fa-external-link-alt"></i> View Project Homepage</a></p>
             </div>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/hitachi.jpg" alt="Hitachi Six Sigma Project Visual" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-2xl font-semibold text-teal-800">Six Sigma Production Optimization (Hitachi Automotive Systems)</h3>
-                <p><strong>Role:</strong> Project Engineer/Principal Investigator (2019)</p>
-                <p><strong>Objective:</strong> Optimize engine mass airflow sensor production using TQM, TPM, and Six Sigma practices.</p>
-                <p><strong>Challenges:</strong> High rejection rates, cross-departmental data coordination issues, and tight deadlines.</p>
-                <p><strong>Solutions:</strong> Applied lean methodologies, statistical analysis and machine learning (Python, Scikit-Learn) to identify defects, streamlining processes.</p>
-                <p><strong>Outcomes:</strong> Reduced rejects by 3%, improved OEE, and published findings in Operations Research Forum.</p>
-                <p><strong>Tools Used:</strong> Python, Excel, Six Sigma, TQM</p>
-                <center><p><h3><a href="https://www.researchgate.net/publication/356267853_An_Investigation_on_Engine_Mass_Airflow_Sensor_Production_via_TQM_TPM_and_Six_Sigma_Practices" target="_blank" class="text-coral-500 hover:underline"><b>---Read About Project Findings---</b></a></h3></p></center>
+                <img src="assets/images/phd.jpg" alt="PhD Research" class="w-full h-96 object-cover rounded-lg mb-4">
+                <h3 class="text-2xl font-semibold text-teal-800">Sustainable Hybrid Intelligence Framework (SHIF)</h3>
+                <p class="text-gray-600 mb-3"><strong>PhD Research</strong> | Principal Investigator | 2021-2025</p>
+                <p class="mb-2">Developed novel framework combining machine learning, bio-inspired design, and Lean manufacturing for advanced thermal management.</p>
+                <p class="mb-3"><strong>Results:</strong> 30-70% heat transfer improvement, 60-70% computational reduction, 43% cost reduction, 29% energy savings, 19% lower emissions.</p>
+                <div class="mb-4">
+                    <span class="badge">Machine Learning</span>
+                    <span class="badge">Bio-inspired Design</span>
+                    <span class="badge">Sustainability</span>
+                </div>
+                <p class="text-center"><a href="https://researchprofiles.herts.ac.uk/en/projects/enhancing-heat-transfer-and-thermal-management-efficiency-in-micr" target="_blank" class="text-teal-600 hover:underline font-semibold"><i class="fas fa-external-link-alt"></i> Learn More</a></p>
             </div>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/rollsroyce.jpg" alt="JHT International Project Visual" class="w-full h-48 object-cover rounded-lg mb-4">
-                <h3 class="text-2xl font-semibold text-teal-800">JHT International Business Development</h3>
-                <p><strong>Role:</strong> Managing Director/Co-Founder (2020–Present)</p>
-                <p><strong>Objective:</strong> Develop business strategies to enhance profitability and secure investments.</p>
-                <p><strong>Challenges:</strong> Building stakeholder relationships and scaling operations in a competitive market.</p>
-                <p><strong>Solutions:</strong> Implemented process improvements, networked with key stakeholders, and leveraged marketing strategies.</p>
-                <p><strong>Outcomes:</strong> Secured £10,000+ in pre-seed investments and improved operational efficiency.</p>
-                <p><strong>Tools Used:</strong> MS Project, Excel, Jira</p>
-                <!-- <p><a href="https://researchprofiles.herts.ac.uk/en/persons/mohammad-harris" target="_blank" class="text-coral-500 hover:underline"><b><center>View My Other Professional Projects</center></b></a></p> -->
+                <h3 class="text-2xl font-semibold text-teal-800"><i class="fas fa-sun"></i> Carbon-Based Photothermal Membranes</h3>
+                <p class="text-gray-600 mb-3"><strong>Royal Society</strong> | Researcher | 2022-2024</p>
+                <p class="mb-3">Contributed to next-generation solar energy storage materials using advanced carbon-based photothermal membranes.</p>
+                <div><span class="badge">Royal Society</span><span class="badge">Solar Energy</span></div>
             </div>
-            <p><h3><a href="https://researchprofiles.herts.ac.uk/en/persons/mohammad-harris" target="_blank" class="text-coral-500 hover:underline"><b><center>---View My Other Projects---</center></b></a></h3></p>
+            <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
+                <h3 class="text-2xl font-semibold text-teal-800"><i class="fas fa-recycle"></i> Circular Economy in Manufacturing</h3>
+                <p class="text-gray-600 mb-3"><strong>EPSRC</strong> | Researcher | 2021-2024</p>
+                <p class="mb-3">Devised frameworks linking sustainable design, machine learning, and cost optimization for circular economy implementation.</p>
+                <div><span class="badge">EPSRC</span><span class="badge">Circular Economy</span></div>
+            </div>
+            <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
+                <img src="assets/images/hitachi.jpg" alt="Hitachi Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                <h3 class="text-2xl font-semibold text-teal-800">Production Optimization (Hitachi Astemo)</h3>
+                <p class="text-gray-600 mb-3"><strong>NCME Bursary</strong> | Project Engineer | 2019</p>
+                <p class="mb-3">Applied Lean Six Sigma and machine learning to optimize production. Reduced reject rates by 3%, improved OEE to 85%.</p>
+                <div class="mb-4"><span class="badge">Six Sigma</span><span class="badge">Machine Learning</span></div>
+                <p class="text-center"><a href="https://www.researchgate.net/publication/356267853_An_Investigation_on_Engine_Mass_Airflow_Sensor_Production_via_TQM_TPM_and_Six_Sigma_Practices" target="_blank" class="text-teal-600 hover:underline font-semibold"><i class="fas fa-external-link-alt"></i> Read Publication</a></p>
+            </div>
+            <p class="text-center mt-6"><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=TudprTUAAAAJ" target="_blank" class="text-teal-600 hover:underline font-semibold text-lg"><i class="fas fa-external-link-alt"></i> View All Publications on Google Scholar</a></p>
+            <p class="text-center mt-4"><a href="https://researchprofiles.herts.ac.uk/en/persons/mohammad-harris" target="_blank" class="text-teal-600 hover:underline font-semibold text-lg"><i class="fas fa-external-link-alt"></i> View All Research Projects</a></p>
         </div>
+
+        <!-- Recognition -->
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="recognition">
+            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Recognition & Impact</h2>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-award"></i> Professional Recognition</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>RAEng Global Talent</strong> - Royal Academy of Engineering</li>
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>Associate Fellow of Higher Education</strong> (AFHEA)</li>
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>Member of IET</strong> (MIET)</li>
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>Chartered Engineer</strong> (CEng - interview pending)</li>
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>PMP Certification</strong> (exam pending)</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-trophy"></i> Awards & Honors</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-medal text-yellow-500"></i> <strong>EPC Hammerman Award Finalist</strong> (2025)</li>
+                        <li><i class="fas fa-medal text-yellow-500"></i> <strong>"Learning Machine" Award</strong> - Alan Turing Institute (2022)</li>
+                        <li><i class="fas fa-medal text-yellow-500"></i> <strong>NCME Bursary Award</strong> - £16K (2019)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-users"></i> Community Leadership</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>STEM Ambassador</strong> - UK</li>
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>F1 in Schools Judge</strong></li>
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>Guest Editor</strong> - Sage and MDPI</li>
+                        <li><i class="fas fa-check-circle text-teal-600"></i> <strong>Peer Reviewer</strong> - Major publishers</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 rounded-lg p-4">
+                    <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-graduation-cap"></i> Academic Excellence</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-university text-teal-600"></i> <strong>PhD</strong> Sustainable Engineering (2024)</li>
+                        <li><i class="fas fa-university text-teal-600"></i> <strong>MRes</strong> - Distinction (2020)</li>
+                        <li><i class="fas fa-university text-teal-600"></i> <strong>BEng (Hons)</strong> - First Class (2018)</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <p class="font-semibold text-teal-800 mb-2"><i class="fas fa-lightbulb"></i> Impact Metrics</p>
+                <div class="grid md:grid-cols-3 gap-4 mt-3">
+                    <div class="text-center"><p class="text-3xl font-bold text-teal-700">£800K+</p><p class="text-sm">Research Funding</p></div>
+                    <div class="text-center"><p class="text-3xl font-bold text-teal-700">20+</p><p class="text-sm">International Partners</p></div>
+                    <div class="text-center"><p class="text-3xl font-bold text-teal-700">10+</p><p class="text-sm">Publications</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Publications -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="publications">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Selected Publications</h2>
-            <ul class="list-disc pl-6 space-y-2">
-                <li>Assessing Thermohydraulic Performance in Novel Micro Pin-Fin Heat Sinks: A Synergistic Experimental, Agile Manufacturing, and Machine Learning Approach. <em>International Journal of Heat and Mass Transfer</em>, Elsevier.</li>
-                <li>Heat Transfer Optimisation Using Novel Biomorphic Pin-Fin Heat Sinks: An Integrated Approach via Design for Manufacturing, Numerical Simulation, and Machine Learning. <em>Thermal Science and Engineering Progress</em>, Elsevier.</li>
-                <li>Comparative Analysis of Micro/Minichannel Flow Boiling Pattern Recognition and Classification using a Combined CNN-Clustering Algorithms Approach. 14th IEEE ICPRS'24 </em>.</li>
-                <li>An Investigation on Engine Mass Airflow Sensor Production via TQM, TPM, and Six Sigma Practices. <em>Operations Research Forum</em>, Springer Nature.</li>
-                <li>Integration of Industry 4.0 and Internet of Things in the Automotive and Motorsports Sectors: An Empirical Analysis. <em>SAE Technical Papers</em>.</li>
-                
-                <p><h3><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=TudprTUAAAAJ" target="_blank" class="text-coral-500 hover:underline"><b><center>---Google Scholar---</center></b></a></h3></p>
+            <ul class="space-y-3">
+                <li class="bg-gray-50 p-3 rounded-lg">
+                    <p class="font-semibold">Assessing Thermohydraulic Performance in Novel Micro Pin-Fin Heat Sinks</p>
+                    <p class="text-sm text-gray-600"><em>International Journal of Heat and Mass Transfer</em>, Elsevier</p>
+                </li>
+                <li class="bg-gray-50 p-3 rounded-lg">
+                    <p class="font-semibold">Heat Transfer Optimisation Using Novel Biomorphic Pin-Fin Heat Sinks</p>
+                    <p class="text-sm text-gray-600"><em>Thermal Science and Engineering Progress</em>, Elsevier</p>
+                </li>
+                <li class="bg-gray-50 p-3 rounded-lg">
+                    <p class="font-semibold">Flow Boiling Pattern Recognition using CNN-Clustering Algorithms</p>
+                    <p class="text-sm text-gray-600">14th IEEE ICPRS'24</p>
+                </li>
+                <li class="bg-gray-50 p-3 rounded-lg">
+                    <p class="font-semibold">Engine Mass Airflow Sensor Production via TQM, TPM, and Six Sigma</p>
+                    <p class="text-sm text-gray-600"><em>Operations Research Forum</em>, Springer</p>
+                </li>
             </ul>
+            <p class="text-center mt-6"><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=TudprTUAAAAJ" target="_blank" class="text-teal-600 hover:underline font-semibold text-lg"><i class="fas fa-external-link-alt"></i> View Full List on Google Scholar</a></p>
         </div>
-        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="certifications">
-            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Certifications & Awards</h2>
-            <ul class="list-disc pl-6 space-y-2">
-                <li>PhD in Sustainable Engineering Technologies, University of Hertfordshire, 2024</li>
-                <li>Project Management Professional (PMP), PMI, Exam Pending</li>
-                <li>Associate Fellow of Higher Education (AFHEA)</li>
-                <li>Member of Institution of Engineering and Technology (MIET)</li>
-                <li>Global Talent Endorsement, Royal Academy of Engineering (RAEng)</li>
-                <li>“Learning Machine” Award, Alan Turing Institute, 2022</li>
-                <li>Engineering Professors' Council (EPC) Hammerman Award Finalist, 2025</li>
-                <p><h3><a href="https://orcid.org/my-orcid?orcid=0000-0003-3919-5952" target="_blank" class="text-coral-500 hover:underline"><b><center>---Other Professional Activities---</center></b></a></h3></p>
-            </ul>
-        </div>
+
+        <!-- Contact -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6" id="contact">
-            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Contact</h2>
-            <p class="text-lg">Email: <a href="mailto:itsharris@yahoo.com" class="text-coral-500 hover:underline">itsharris@yahoo.com</a></p>
-            <div class="flex space-x-4 mt-2">
-                <a href="https://www.linkedin.com/in/itsharris" target="_blank" class="social-icon text-teal-800 text-2xl" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/itsharris" target="_blank" class="social-icon text-teal-800 text-2xl" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
+            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Let's Connect</h2>
+            <p class="text-lg mb-4">Open to collaboration opportunities in climate technology, sustainable innovation, and AI-driven solutions. Available for consulting, partnerships, and advisory roles in decarbonisation ventures.</p>
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-envelope"></i> Contact Information</h3>
+                    <p class="mb-2"><strong>Email:</strong> <a href="mailto:itsharris@yahoo.com" class="text-teal-600 hover:underline">itsharris@yahoo.com</a></p>
+                    <p class="mb-2"><strong>Phone:</strong> +44 7379 451662</p>
+                    <p class="mb-4"><strong>Location:</strong> London, United Kingdom</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/in/mharris07" target="_blank" class="social-icon text-teal-800 text-3xl" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/itsharris" target="_blank" class="social-icon text-teal-800 text-3xl" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://scholar.google.com/citations?user=TudprTUAAAAJ" target="_blank" class="social-icon text-teal-800 text-3xl" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+                        <a href="https://orcid.org/0000-0003-3919-5952" target="_blank" class="social-icon text-teal-800 text-3xl" aria-label="ORCID"><i class="fab fa-orcid"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-teal-700 mb-3"><i class="fas fa-handshake"></i> Collaboration Interests</h3>
+                    <ul class="space-y-2">
+                        <li><i class="fas fa-check text-teal-600"></i> Climate tech venture partnerships</li>
+                        <li><i class="fas fa-check text-teal-600"></i> AI-driven decarbonisation solutions</li>
+                        <li><i class="fas fa-check text-teal-600"></i> Sustainable engineering consulting</li>
+                        <li><i class="fas fa-check text-teal-600"></i> Research collaborations</li>
+                        <li><i class="fas fa-check text-teal-600"></i> Advisory and mentorship roles</li>
+                    </ul>
+                </div>
             </div>
-            <a href="mailto:itsharris@yahoo.com" class="inline-block mt-4 bg-coral-500 text-white px-6 py-2 rounded-lg hover:bg-coral-600 transition">Get in Touch</a>
+            <!-- Formspree Contact Form (Replace YOUR_FORM_ID) -->
+            <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit"><i class="fas fa-paper-plane"></i> Send Message</button>
+            </form>
         </div>
     </div>
-    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></a>
-    <footer class="gradient-bg text-white py-4">
-        <p class="text-center">© 2025 Dr. Mohammad Harris. All rights reserved.</p>
+
+    <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
+
+    <footer class="gradient-bg text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">© 2025 Dr. Mohammad Harris. All rights reserved.</p>
+            <p class="text-sm">Climate Technology Entrepreneur | AI Innovation | Sustainable Engineering</p>
+        </div>
     </footer>
+
+    <!-- jsPDF & html2canvas for PDF Generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
     <script>
-        // Smooth scrolling for navigation
-        document.querySelectorAll('nav a').forEach(anchor => {
+        // Theme Toggle (Dark Mode)
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        const icon = themeToggle.querySelector('i');
+
+        // Load saved theme or system preference
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        html.setAttribute('data-theme', savedTheme);
+        icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
-                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
 
-        // Fade-in animation on scroll
+        // Fade-in on scroll
         const sections = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Animate progress bars when skills section is visible
                     if (entry.target.id === 'skills') {
-                        const progressBars = entry.target.querySelectorAll('.progress-bar');
-                        progressBars.forEach(bar => {
-                            const fill = bar.querySelector('.progress-fill');
-                            const progress = bar.getAttribute('data-progress');
-                            setTimeout(() => {
-                                fill.style.width = `${progress}%`;
-                            }, 100); // Slight delay for smoother effect
-                        });
+                        animateProgressBars(entry.target);
                     }
                 }
             });
         }, { threshold: 0.1 });
+
         sections.forEach(section => observer.observe(section));
 
-        // Back-to-top button
-        const backToTop = document.getElementById('backToTop');
+        // Animate progress bars
+        function animateProgressBars(section) {
+            const bars = section.querySelectorAll('.progress-bar');
+            bars.forEach(bar => {
+                const fill = bar.querySelector('.progress-fill');
+                const value = bar.getAttribute('data-progress');
+                setTimeout(() => fill.style.width = `${value}%`, 100);
+            });
+        }
+
+        // Active nav link on scroll
         window.addEventListener('scroll', () => {
-            backToTop.classList.toggle('visible', window.scrollY > 250);
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) current = section.getAttribute('id');
+            });
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+            });
+
+            // Back-to-top
+            document.getElementById('backToTop').classList.toggle('visible', scrollY > 250);
         });
-        backToTop.addEventListener('click', (e) => {
+
+        // Back-to-top click
+        document.getElementById('backToTop').addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Download CV as PDF
+        document.getElementById('download-cv').addEventListener('click', async (e) => {
+            e.preventDefault();
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const element = document.body; // Or target a specific section, e.g., document.getElementById('about')
+
+            try {
+                const canvas = await html2canvas(element, { scale: 0.5 }); // Scale down for multi-page if needed
+                const imgData = canvas.toDataURL('image/png');
+                const imgProps = doc.getImageProperties(imgData);
+                const pdfWidth = doc.internal.pageSize.getWidth();
+                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+                doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+                doc.save('Dr-Mohammad-Harris-CV.pdf');
+            } catch (error) {
+                console.error('PDF generation failed:', error);
+                alert('PDF download failed. Please try again.');
+            }
         });
 
         // Preloader
@@ -373,7 +697,16 @@
             const preloader = document.getElementById('preloader');
             setTimeout(() => {
                 preloader.classList.add('hidden');
-            }, 100);
+                setTimeout(() => preloader.style.display = 'none', 500);
+            }, 800);
+        });
+
+        // Trigger skills animation if already in view
+        document.addEventListener('DOMContentLoaded', () => {
+            const skills = document.getElementById('skills');
+            if (skills && skills.getBoundingClientRect().top < window.innerHeight) {
+                animateProgressBars(skills);
+            }
         });
     </script>
 </body>
