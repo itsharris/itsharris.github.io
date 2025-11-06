@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=MH">
-    
+   
     <!-- Fathom Analytics (Replace YOUR_SITE_ID) -->
     <script>
         (function(f, a, t, h, o, m){
@@ -24,7 +24,6 @@
         fathom('set', 'siteId', 'YOUR_SITE_ID'); // Replace with your Site ID
         fathom('trackPageview');
     </script>
-
     <style>
         :root {
             --bg-primary: #f3f4f6;
@@ -298,19 +297,55 @@
                 gap: 0.5rem;
             }
         }
+        /* Impact Metrics Counter */
+        .counter {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .counter.visible {
+            opacity: 1;
+        }
+        /* Footer text visibility fix - FULLY VISIBLE IN BOTH MODES */
+        footer {
+            background: linear-gradient(135deg, var(--accent) 0%, #1a3c5e 100%);
+            color: white;
+        }
+        footer p {
+            color: #ffffff !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        [data-theme="light"] footer p,
+        [data-theme="dark"] footer p {
+            color: #ffffff !important;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+        /* Hobbies Section */
+        .hobby-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .hobby-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
     <div class="preloader" id="preloader">
         <div class="loader"></div>
     </div>
-
     <header class="header-bg text-white text-center py-16">
         <h1 class="text-4xl md:text-5xl font-bold mb-2 header-text">Dr. Mohammad Harris</h1>
         <p class="text-lg md:text-xl header-text">Climate Tech Entrepreneur | AI-Driven Decarbonisation | £800K+ Research Funding</p>
         <p class="text-base md:text-lg mt-1 header-text">PhD, MRes, BEng (Hons) | AFHEA, MIET, CEng (Pending) | RAEng Global Talent</p>
     </header>
-
     <nav class="gradient-bg py-4 shadow-lg">
         <div class="container mx-auto flex flex-wrap justify-center gap-4 md:gap-6 px-4 items-center">
             <a href="#about" class="nav-link text-white font-semibold">About</a>
@@ -319,18 +354,18 @@
             <a href="#projects" class="nav-link text-white font-semibold">Projects</a>
             <a href="#recognition" class="nav-link text-white font-semibold">Recognition</a>
             <a href="#publications" class="nav-link text-white font-semibold">Publications</a>
+            <a href="#hobbies" class="nav-link text-white font-semibold">Hobbies</a>
             <a href="#contact" class="nav-link text-white font-semibold">Contact</a>
             <!-- Dark Mode Toggle -->
             <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                 <i class="fas fa-sun"></i>
             </button>
             <!-- Download CV Button -->
-            <a href="#" id="download-cv" class="cv-download">
+            <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/cv/Mohammad_Harris_CV.pdf" download id="download-cv" class="cv-download">
                 <i class="fas fa-download"></i> Download CV
             </a>
         </div>
     </nav>
-
     <div class="container mx-auto px-4 md:px-12 py-12">
         <!-- About -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="about">
@@ -348,7 +383,6 @@
                 <p>Fluent in <strong>English</strong> and <strong>Bangla</strong> | Proficient in <strong>Hindi</strong> and <strong>Urdu</strong> (B1) | Basic <strong>French</strong> and <strong>Spanish</strong> (A2)</p>
             </div>
         </div>
-
         <!-- Current Work -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="current">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Current Work</h2>
@@ -376,7 +410,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Skills -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="skills">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Core Competencies</h2>
@@ -415,7 +448,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Projects -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="projects">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Featured Projects</h2>
@@ -468,7 +500,6 @@
             <p class="text-center mt-6"><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=TudprTUAAAAJ" target="_blank" class="text-teal-600 hover:underline font-semibold text-lg"><i class="fas fa-external-link-alt"></i> View All Publications on Google Scholar</a></p>
             <p class="text-center mt-4"><a href="https://researchprofiles.herts.ac.uk/en/persons/mohammad-harris" target="_blank" class="text-teal-600 hover:underline font-semibold text-lg"><i class="fas fa-external-link-alt"></i> View All Research Projects</a></p>
         </div>
-
         <!-- Recognition -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="recognition">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Recognition & Impact</h2>
@@ -514,13 +545,52 @@
             <div class="highlight-box">
                 <p class="font-semibold text-teal-800 mb-2"><i class="fas fa-lightbulb"></i> Impact Metrics</p>
                 <div class="grid md:grid-cols-3 gap-4 mt-3">
-                    <div class="text-center"><p class="text-3xl font-bold text-teal-700">£800K+</p><p class="text-sm">Research Funding</p></div>
-                    <div class="text-center"><p class="text-3xl font-bold text-teal-700">20+</p><p class="text-sm">International Partners</p></div>
-                    <div class="text-center"><p class="text-3xl font-bold text-teal-700">10+</p><p class="text-sm">Publications</p></div>
+                    <div class="text-center">
+                        <p class="counter" data-target="800000">0</p>
+                        <p class="text-sm">Research Funding</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="counter" data-target="20">0</p>
+                        <p class="text-sm">International Partners</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="counter" data-target="10">0</p>
+                        <p class="text-sm">Publications</p>
+                    </div>
                 </div>
             </div>
         </div>
-
+        <!-- Hobbies -->
+        <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="hobbies">
+            <h2 class="text-3xl font-semibold text-teal-800 mb-4">Hobbies & Interests</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon"><i class="fas fa-hiking"></i></span>
+                        <span><strong>Hiking & Mountaineering</strong> – Exploring UK trails and beyond</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon"><i class="fas fa-camera"></i></span>
+                        <span><strong>Landscape Photography</strong> – Capturing nature’s beauty</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon"><i class="fas fa-gamepad"></i></span>
+                        <span><strong>Gaming</strong> – Strategy & simulation games</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon"><i class="fas fa-utensils"></i></span>
+                        <span><strong>Cooking Fusion Cuisine</strong> – Blending Bangladeshi & British flavors</span>
+                    </div>
+                    <div class="hobby-item">
+                        <span class="hobby-icon"><i class="fas fa-book"></i></span>
+                        <span><strong>Science Fiction Reading</strong> – Asimov, Clarke, Herbert</span>
+                    </div>
+                </div>
+                <div class="flex justify-center">
+                    <img src="assets/images/hobby.jpg" alt="My favorite moment in the mountains" class="w-full max-w-sm h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                </div>
+            </div>
+        </div>
         <!-- Publications -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="publications">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Selected Publications</h2>
@@ -544,7 +614,6 @@
             </ul>
             <p class="text-center mt-6"><a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=TudprTUAAAAJ" target="_blank" class="text-teal-600 hover:underline font-semibold text-lg"><i class="fas fa-external-link-alt"></i> View Full List on Google Scholar</a></p>
         </div>
-
         <!-- Contact -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6" id="contact">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Let's Connect</h2>
@@ -582,27 +651,22 @@
             </form>
         </div>
     </div>
-
     <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></a>
-
-    <footer class="gradient-bg text-white py-6">
+    <footer class="py-6">
         <div class="container mx-auto text-center">
             <p class="mb-2">© 2025 Dr. Mohammad Harris. All rights reserved.</p>
             <p class="text-sm">Climate Technology Entrepreneur | AI Innovation | Sustainable Engineering</p>
         </div>
     </footer>
 
-    <!-- jsPDF & html2canvas for PDF Generation -->
+    <!-- jsPDF & html2canvas for PDF Generation (kept as backup) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
     <script>
         // Theme Toggle (Dark Mode)
         const themeToggle = document.getElementById('theme-toggle');
         const html = document.documentElement;
         const icon = themeToggle.querySelector('i');
-
-        // Load saved theme or system preference
         const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         html.setAttribute('data-theme', savedTheme);
         icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
@@ -633,10 +697,12 @@
                     if (entry.target.id === 'skills') {
                         animateProgressBars(entry.target);
                     }
+                    if (entry.target.id === 'recognition') {
+                        animateCounters(entry.target);
+                    }
                 }
             });
         }, { threshold: 0.1 });
-
         sections.forEach(section => observer.observe(section));
 
         // Animate progress bars
@@ -646,6 +712,26 @@
                 const fill = bar.querySelector('.progress-fill');
                 const value = bar.getAttribute('data-progress');
                 setTimeout(() => fill.style.width = `${value}%`, 100);
+            });
+        }
+
+        // Animate impact counters
+        function animateCounters(section) {
+            const counters = section.querySelectorAll('.counter');
+            counters.forEach(counter => {
+                counter.classList.add('visible');
+                const target = parseInt(counter.getAttribute('data-target'));
+                const isCurrency = target > 10000;
+                const increment = target / 200;
+                let current = 0;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    counter.textContent = isCurrency ? `£${Math.floor(current).toLocaleString()}+` : `${Math.floor(current)}+`;
+                }, 10);
             });
         }
 
@@ -659,8 +745,6 @@
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
             });
-
-            // Back-to-top
             document.getElementById('backToTop').classList.toggle('visible', scrollY > 250);
         });
 
@@ -668,28 +752,6 @@
         document.getElementById('backToTop').addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-
-        // Download CV as PDF
-        document.getElementById('download-cv').addEventListener('click', async (e) => {
-            e.preventDefault();
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF();
-            const element = document.body; // Or target a specific section, e.g., document.getElementById('about')
-
-            try {
-                const canvas = await html2canvas(element, { scale: 0.5 }); // Scale down for multi-page if needed
-                const imgData = canvas.toDataURL('image/png');
-                const imgProps = doc.getImageProperties(imgData);
-                const pdfWidth = doc.internal.pageSize.getWidth();
-                const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-                doc.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-                doc.save('Dr-Mohammad-Harris-CV.pdf');
-            } catch (error) {
-                console.error('PDF generation failed:', error);
-                alert('PDF download failed. Please try again.');
-            }
         });
 
         // Preloader
