@@ -110,6 +110,24 @@
             transform: scale(1.1);
             font-weight: bold;
         }
+        /* Mobile Menu Styles */
+        #mobile-menu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+        }
+        #mobile-menu.open {
+            max-height: 800px; /* Enough for all items */
+        }
+        .nav-link-mobile {
+            font-size: 16px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .nav-link-mobile:hover,
+        .nav-link-mobile.active {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--accent-hover) !important;
+            font-weight: bold;
+        }
         .header-bg {
             background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/images/banner.jpeg');
             background-size: cover;
@@ -346,24 +364,57 @@
         <p class="text-lg md:text-xl header-text">Climate Tech Entrepreneur | AI-Driven Decarbonisation | Project and Innovation Management</p>
         <p class="text-base md:text-lg mt-1 header-text">PhD, MRes, BEng (Hons) | AFHEA, MIET, CEng (Pending) | RAEng Global Talent</p>
     </header>
-    <nav class="gradient-bg py-4 shadow-lg">
-        <div class="container mx-auto flex flex-wrap justify-center gap-4 md:gap-6 px-4 items-center">
-            <a href="#about" class="nav-link text-white font-semibold">About</a>
-            <a href="#current" class="nav-link text-white font-semibold">Current Work</a>
-            <a href="#skills" class="nav-link text-white font-semibold">Skills</a>
-            <a href="#projects" class="nav-link text-white font-semibold">Projects</a>
-            <a href="#recognition" class="nav-link text-white font-semibold">Recognition</a>
-            <a href="#publications" class="nav-link text-white font-semibold">Publications</a>
-            <a href="#hobbies" class="nav-link text-white font-semibold">Hobbies</a>
-            <a href="#contact" class="nav-link text-white font-semibold">Contact</a>
-            <!-- Dark Mode Toggle -->
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <i class="fas fa-sun"></i>
-            </button>
-            <!-- Download CV Button -->
-            <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV(GitHub).docx" download id="download-cv" class="cv-download">
-                <i class="fas fa-download"></i> Download CV
-            </a>
+    <!-- REPLACE YOUR CURRENT <nav> WITH THIS ENTIRE BLOCK -->
+    <nav class="gradient-bg py-4 shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo / Name (optional) -->
+                <a href="#" class="text-white font-bold text-xl">Dr. Harris</a>
+    
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex flex-wrap justify-center gap-4 lg:gap-6 items-center">
+                    <a href="#about" class="nav-link text-white font-semibold">About</a>
+                    <a href="#current" class="nav-link text-white font-semibold">Current Work</a>
+                    <a href="#skills" class="nav-link text-white font-semibold">Skills</a>
+                    <a href="#projects" class="nav-link text-white font-semibold">Projects</a>
+                    <a href="#recognition" class="nav-link text-white font-semibold">Recognition</a>
+                    <a href="#publications" class="nav-link text-white font-semibold">Publications</a>
+                    <a href="#hobbies" class="nav-link text-white font-semibold">Hobbies</a>
+                    <a href="#contact" class="nav-link text-white font-semibold">Contact</a>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV(GitHub).docx" 
+                       download id="download-cv" class="cv-download">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+    
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobile-menu" class="md:hidden hidden flex-col bg-gradient-to-b from-teal-800 to-[#1a3c5e] mt-4 rounded-lg shadow-2xl overflow-hidden">
+                <a href="#about" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">About</a>
+                <a href="#current" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">Current Work</a>
+                <a href="#skills" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">Skills</a>
+                <a href="#projects" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">Projects</a>
+                <a href="#recognition" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">Recognition</a>
+                <a href="#publications" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">Publications</a>
+                <a href="#hobbies" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">Hobbies</a>
+                <a href="#contact" class="nav-link-mobile text-white font-semibold py-3 px-6 border-b border-teal-700">Contact</a>
+                <div class="py-3 px-6 flex flex-col gap-3">
+                    <button id="theme-toggle-mobile" class="theme-toggle text-white text-left flex items-center gap-2">
+                        <i class="fas fa-sun"></i> Toggle Dark Mode
+                    </button>
+                    <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV(GitHub).docx" 
+                       download class="cv-download inline-flex items-center gap-2">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </div>
+            </div>
         </div>
     </nav>
     <div class="container mx-auto px-4 md:px-12 py-12">
@@ -774,6 +825,43 @@
             if (skills && skills.getBoundingClientRect().top < window.innerHeight) {
                 animateProgressBars(skills);
             }
+        });
+                // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuBtn.querySelector('i');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenu.classList.toggle('hidden', !isOpen);
+            mobileMenuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenu.classList.add('hidden');
+                mobileMenuIcon.className = 'fas fa-bars';
+            });
+        });
+        
+        // Sync mobile theme toggle with main one
+        themeToggleMobile.addEventListener('click', () => {
+            themeToggle.click(); // Reuse existing toggle logic
+        });
+        
+        // Update active state for mobile links too
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 150;
+                if (scrollY >= sectionTop) current = section.getAttribute('id');
+            });
+            document.querySelectorAll('.nav-link-mobile').forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+            });
         });
     </script>
 </body>
