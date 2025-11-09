@@ -9,7 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=MH">
-   
+  
     <!-- Fathom Analytics (Replace YOUR_SITE_ID) -->
     <script>
         (function(f, a, t, h, o, m){
@@ -364,14 +364,12 @@
         <p class="text-lg md:text-xl header-text">Climate Tech Entrepreneur | AI-Driven Decarbonisation | Project and Innovation Management</p>
         <p class="text-base md:text-lg mt-1 header-text">PhD, MRes, BEng (Hons) | AFHEA, MIET, CEng (Pending) | RAEng Global Talent</p>
     </header>
-    <!-- REPLACE YOUR CURRENT <nav> WITH THIS ENTIRE BLOCK -->
+    
+    <!-- FIXED NAV: Removed left logo, centered menu perfectly -->
     <nav class="gradient-bg py-4 shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center">
-                <!-- Logo / Name (optional) -->
-                <a href="#" class="text-white font-bold text-xl">Dr. Harris</a>
-    
-                <!-- Desktop Menu -->
+            <div class="flex justify-center items-center relative">
+                <!-- Desktop Menu - Centered -->
                 <div class="hidden md:flex flex-wrap justify-center gap-4 lg:gap-6 items-center">
                     <a href="#about" class="nav-link text-white font-semibold">About</a>
                     <a href="#current" class="nav-link text-white font-semibold">Current Work</a>
@@ -384,14 +382,14 @@
                     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
                         <i class="fas fa-sun"></i>
                     </button>
-                    <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV(GitHub).docx" 
+                    <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV(GitHub).docx"
                        download id="download-cv" class="cv-download">
                         <i class="fas fa-download"></i> Download CV
                     </a>
                 </div>
-    
-                <!-- Mobile Hamburger -->
-                <button id="mobile-menu-btn" class="md:hidden text-white text-3xl focus:outline-none">
+   
+                <!-- Mobile Hamburger - Positioned on the right -->
+                <button id="mobile-menu-btn" class="md:hidden text-white text-3xl focus:outline-none absolute right-0">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
@@ -409,7 +407,7 @@
                     <button id="theme-toggle-mobile" class="theme-toggle text-white text-left flex items-center gap-2">
                         <i class="fas fa-sun"></i> Toggle Dark Mode
                     </button>
-                    <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV(GitHub).docx" 
+                    <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV(GitHub).docx"
                        download class="cv-download inline-flex items-center gap-2">
                         <i class="fas fa-download"></i> Download CV
                     </a>
@@ -417,6 +415,7 @@
             </div>
         </div>
     </nav>
+    
     <div class="container mx-auto px-4 md:px-12 py-12">
         <!-- About -->
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="about">
@@ -714,7 +713,6 @@
             <p class="text-sm">Climate Technology Entrepreneur | AI Innovation | Sustainable Engineering</p>
         </div>
     </footer>
-
     <!-- jsPDF & html2canvas for PDF Generation (kept as backup) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -726,7 +724,6 @@
         const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
         html.setAttribute('data-theme', savedTheme);
         icon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-
         themeToggle.addEventListener('click', () => {
             const currentTheme = html.getAttribute('data-theme');
             const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -734,7 +731,6 @@
             localStorage.setItem('theme', newTheme);
             icon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
         });
-
         // Smooth scrolling
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
@@ -743,7 +739,6 @@
                 if (target) target.scrollIntoView({ behavior: 'smooth' });
             });
         });
-
         // Fade-in on scroll
         const sections = document.querySelectorAll('.fade-in');
         const observer = new IntersectionObserver(entries => {
@@ -760,7 +755,6 @@
             });
         }, { threshold: 0.1 });
         sections.forEach(section => observer.observe(section));
-
         // Animate progress bars
         function animateProgressBars(section) {
             const bars = section.querySelectorAll('.progress-bar');
@@ -770,7 +764,6 @@
                 setTimeout(() => fill.style.width = `${value}%`, 100);
             });
         }
-
         // Animate impact counters
         function animateCounters(section) {
             const counters = section.querySelectorAll('.counter');
@@ -790,7 +783,6 @@
                 }, 10);
             });
         }
-
         // Active nav link on scroll
         window.addEventListener('scroll', () => {
             let current = '';
@@ -803,13 +795,11 @@
             });
             document.getElementById('backToTop').classList.toggle('visible', scrollY > 250);
         });
-
         // Back-to-top click
         document.getElementById('backToTop').addEventListener('click', (e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-
         // Preloader
         window.addEventListener('load', () => {
             const preloader = document.getElementById('preloader');
@@ -818,7 +808,6 @@
                 setTimeout(() => preloader.style.display = 'none', 500);
             }, 800);
         });
-
         // Trigger skills animation if already in view
         document.addEventListener('DOMContentLoaded', () => {
             const skills = document.getElementById('skills');
@@ -826,18 +815,18 @@
                 animateProgressBars(skills);
             }
         });
-                // Mobile Menu Toggle
+        // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuIcon = mobileMenuBtn.querySelector('i');
         const themeToggleMobile = document.getElementById('theme-toggle-mobile');
-        
+       
         mobileMenuBtn.addEventListener('click', () => {
             const isOpen = mobileMenu.classList.toggle('open');
             mobileMenu.classList.toggle('hidden', !isOpen);
             mobileMenuIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
         });
-        
+       
         // Close mobile menu when clicking a link
         document.querySelectorAll('#mobile-menu a[href^="#"]').forEach(link => {
             link.addEventListener('click', () => {
@@ -846,12 +835,12 @@
                 mobileMenuIcon.className = 'fas fa-bars';
             });
         });
-        
+       
         // Sync mobile theme toggle with main one
         themeToggleMobile.addEventListener('click', () => {
             themeToggle.click(); // Reuse existing toggle logic
         });
-        
+       
         // Update active state for mobile links too
         window.addEventListener('scroll', () => {
             let current = '';
