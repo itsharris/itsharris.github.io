@@ -3,12 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Mohammad Harris - Climate & Clean Tech Founder | AI-Enabled Sustainable Manufacturing</title>
+
+    <!-- SEO: Title reordered to front-load primary keyword -->
+    <title>AI-Enabled Sustainable Manufacturing | Dr. Mohammad Harris — Climate Tech Founder</title>
+
+    <!-- SEO: Meta description (was already present, kept as-is) -->
     <meta name="description" content="Climate Technology Entrepreneur & AI Expert. PhD-qualified engineer specializing in decarbonisation solutions, sustainable engineering, circular economy and AI-driven innovation. £800K+ research funding secured.">
+
+    <!-- SEO: Canonical tag (new) -->
+    <link rel="canonical" href="https://itsharris.github.io/">
+
+    <!-- SEO: Open Graph tags (new) -->
+    <meta property="og:title" content="Dr. Mohammad Harris — Climate Tech & AI Founder">
+    <meta property="og:description" content="PhD-qualified founder specialising in AI-enabled sustainable manufacturing and industrial decarbonisation. £800K+ research funding secured.">
+    <meta property="og:image" content="https://itsharris.github.io/assets/images/headshot.jpg">
+    <meta property="og:url" content="https://itsharris.github.io/">
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- SEO: Twitter Card tags (new) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Dr. Mohammad Harris — Climate Tech & AI Founder">
+    <meta name="twitter:description" content="PhD-qualified founder specialising in AI-enabled sustainable manufacturing and industrial decarbonisation.">
+    <meta name="twitter:image" content="https://itsharris.github.io/assets/images/headshot.jpg">
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" type="image/png" href="https://via.placeholder.com/32?text=MH">
+
+    <!-- SEO: Real favicon (replace placeholder) -->
+    <link rel="icon" type="image/png" href="assets/images/headshot.jpg">
+
+    <!-- SEO: Schema.org Person markup (expanded sameAs) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -17,36 +43,43 @@
       "jobTitle": "Climate and Clean Technology Founder",
       "description": "PhD-qualified founder working on AI-enabled sustainable manufacturing and circular economy systems.",
       "url": "https://itsharris.github.io",
+      "email": "itsharris@yahoo.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "London",
+        "addressCountry": "GB"
+      },
       "sameAs": [
-        "https://www.linkedin.com/in/mharris07"
+        "https://www.linkedin.com/in/mharris07",
+        "https://github.com/itsharris",
+        "https://scholar.google.com/citations?user=TudprTUAAAAJ",
+        "https://orcid.org/0000-0003-3919-5952"
       ],
       "affiliation": {
         "@type": "Organization",
         "name": "Inshira Technologies",
         "url": "https://www.inshira.co.uk"
       },
+      "alumniOf": [
+        {
+          "@type": "EducationalOrganization",
+          "name": "University of Hertfordshire"
+        }
+      ],
       "knowsAbout": [
         "Sustainable Manufacturing",
         "AI in Manufacturing",
         "Circular Economy",
-        "Industrial Decarbonisation"
+        "Industrial Decarbonisation",
+        "Thermal Management",
+        "Machine Learning",
+        "Climate Technology"
       ]
     }
     </script>
-    <!-- Fathom Analytics (Replace YOUR_SITE_ID) -->
-    <script>
-        (function(f, a, t, h, o, m){
-            a[h]=a[h]||function(){
-                (a[h].q=a[h].q||[]).push(arguments)
-            };
-            o=f.createElement('script'),
-            m=f.getElementsByTagName('script')[0];
-            o.async=1; o.src=t; o.id='fathom-script';
-            m.parentNode.insertBefore(o,m)
-        })(document, window, '//your-fathom-domain.com/tracker.js', 'fathom');
-        fathom('set', 'siteId', 'YOUR_SITE_ID'); // Replace with your Site ID
-        fathom('trackPageview');
-    </script>
+
+    <!-- REMOVED: Broken Fathom Analytics placeholder (was firing broken network request) -->
+
     <style>
         :root {
             --bg-primary: #f3f4f6;
@@ -444,11 +477,11 @@
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="about">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">About Me</h2>
             <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
-                <img src="assets/images/headshot.jpg" alt="Dr. Mohammad Harris" class="w-48 h-48 rounded-full object-cover profile-photo">
+                <img src="assets/images/headshot.jpg" alt="Dr. Mohammad Harris, Climate Tech Founder and AI Engineer based in London" class="w-48 h-48 rounded-full object-cover profile-photo">
                 <div>
-                    <p class="text-lg mb-4">I’m a UK-based climate and clean technology founder working at the intersection of AI-enabled manufacturing, sustainable engineering, and circular systems. My work focuses on building applied, data-driven tools for sustainable manufacturing that help SME manufacturers improve resource efficiency, reduce waste, and operate within real-world technical and commercial constraints.</p>
-                    <p class="text-lg mb-4">I’m currently the Managing Director of <a href="https://www.inshira.co.uk/" target="_blank"><strong>Inshira Technologies</strong></a>, where I develop AI-enabled manufacturing and circular economy products — from customer discovery and MVP development to early pilot deployments with UK and European manufacturers. The emphasis is on translating complex industrial sustainability challenges into practical digital systems with measurable energy, material, and cost impact.</p>
-                    <p class="text-lg">I’m PhD-qualified in sustainable engineering and have secured and overseen more than £1m in competitive funding. My work spans academia, industry, and startups, with a consistent focus on industrial decarbonisation and turning research into deployable, industry-facing solutions.</p>               </div>
+                    <p class="text-lg mb-4">I'm a UK-based climate and clean technology founder working at the intersection of AI-enabled manufacturing, sustainable engineering, and circular systems. My work focuses on building applied, data-driven tools for sustainable manufacturing that help SME manufacturers improve resource efficiency, reduce waste, and operate within real-world technical and commercial constraints.</p>
+                    <p class="text-lg mb-4">I'm currently the Managing Director of <a href="https://www.inshira.co.uk/" target="_blank"><strong>Inshira Technologies</strong></a>, where I develop AI-enabled manufacturing and circular economy products — from customer discovery and MVP development to early pilot deployments with UK and European manufacturers. The emphasis is on translating complex industrial sustainability challenges into practical digital systems with measurable energy, material, and cost impact.</p>
+                    <p class="text-lg">I'm PhD-qualified in sustainable engineering and have secured and overseen more than £1m in competitive funding. My work spans academia, industry, and startups, with a consistent focus on industrial decarbonisation and turning research into deployable, industry-facing solutions.</p>               </div>
                 </div>
             <div class="highlight-box mt-6">
                 <p class="font-semibold text-teal-800 mb-2"><i class="fas fa-globe"></i> Languages & Global Reach</p>
@@ -468,10 +501,10 @@
                 </div>
                 <p class="mb-2"><strong>Key Achievements:</strong></p>
                 <ul class="list-disc pl-6 space-y-1 mb-3">
-                    <li>Leading Inshira’s strategic vision and overall growth in the climate and clean tech sector.</li>
+                    <li>Leading Inshira's strategic vision and overall growth in the climate and clean tech sector.</li>
                     <li>Overseeing the development and implementation of Circular Economy AI & Smart Factory, focusing on innovative manufacturing solutions.</li>
                     <li>Building strategic partnerships to foster innovation, sustainability, and industry collaboration.</li>
-                    <li>Securing funding and investment opportunities to support Inshira’s growth and impactful projects.</li>
+                    <li>Securing funding and investment opportunities to support Inshira's growth and impactful projects.</li>
                     <li>Championing ethical business practices and contributing to a diverse and inclusive workplace culture.</li>
                 </ul>
                 <div class="mt-4">
@@ -525,7 +558,7 @@
         <div class="section section-card fade-in bg-white rounded-lg shadow-lg p-6 mb-8" id="projects">
             <h2 class="text-3xl font-semibold text-teal-800 mb-4">Featured Projects</h2>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/microflotec.jpeg" alt="Micro-FloTec Project" class="w-full h-96 object-cover rounded-lg mb-4">
+                <img src="assets/images/microflotec.jpeg" alt="Micro-FloTec Horizon Europe project — compact heat transfer systems for EVs and aerospace" class="w-full h-96 object-cover rounded-lg mb-4">
                 <h3 class="text-2xl font-semibold text-teal-800">Micro-FloTec: Advanced Heat Transfer Technologies</h3>
                 <p class="text-gray-600 mb-3"><strong>Horizon Europe</strong> | Project Research Manager | 2022-2025</p>
                 <p class="mb-2">Pioneer compact heat transfer and thermal management systems for EVs, aerospace, and renewable energy storage. Coordinated 17+ international partners with €800,000+ budget.</p>
@@ -538,7 +571,7 @@
                 <p class="text-center"><a href="https://www.microflotec.com/" target="_blank" class="text-teal-600 hover:underline font-semibold"><i class="fas fa-external-link-alt"></i> View Project Homepage</a></p>
             </div>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/phd.jpg" alt="PhD Research" class="w-full h-96 object-cover rounded-lg mb-4">
+                <img src="assets/images/phd.jpg" alt="PhD research on thermal management using machine learning algorithms at University of Hertfordshire" class="w-full h-96 object-cover rounded-lg mb-4">
                 <h3 class="text-2xl font-semibold text-teal-800"><i class="fa-solid fa-fire-flame-curved"></i> Enhancing Thermal Management through Machine Learning Algorithms</h3>
                 <p class="text-gray-600 mb-3"><strong>PhD Research</strong> | Principal Investigator | 2021-2025</p>
                 <p class="mb-2">Developed novel framework combining machine learning, bio-inspired design, and Lean manufacturing for advanced thermal management.</p>
@@ -551,7 +584,7 @@
                 <p class="text-center"><a href="https://researchprofiles.herts.ac.uk/en/projects/enhancing-heat-transfer-and-thermal-management-efficiency-in-micr" target="_blank" class="text-teal-600 hover:underline font-semibold"><i class="fas fa-external-link-alt"></i> Learn More</a></p>
             </div>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/C13.JPG" alt="C13" class="w-full h-96 object-cover object-[50%_85%] rounded-lg mb-4">
+                <img src="assets/images/C13.JPG" alt="Carbon13 Cambridge climate tech venture builder Cohort 9 — Dr. Mohammad Harris" class="w-full h-96 object-cover object-[50%_85%] rounded-lg mb-4">
                 <h3 class="text-2xl font-semibold text-teal-800"><i class="fa-solid fa-tree"></i> Carbon13 Venture Builder (Cambridge, Cohort 9)</h3>
                 <p class="text-gray-600 mb-3"><strong>Carbon13</strong> | Climate Tech Entrepreneur | 2025</p>
                 <p class="mb-2">Selected as one of 80 innovators from hundreds of applicants for Cambridge's leading climate tech venture builder focused on decarbonisation solutions.</p>
@@ -575,7 +608,7 @@
                 <div><span class="badge">AI/Machine Learning</span><span class="badge">Manufacturing Optimisation</span></div>
             </div>
             <div class="project-card bg-gray-50 rounded-lg p-5 mb-6">
-                <img src="assets/images/hitachi.jpg" alt="Hitachi Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                <img src="assets/images/hitachi.jpg" alt="Hitachi Astemo production optimisation using Lean Six Sigma and machine learning" class="w-full h-48 object-cover rounded-lg mb-4">
                 <h3 class="text-2xl font-semibold text-teal-800"><i class="fa-solid fa-industry"></i> Production Optimization (Hitachi Astemo)</h3>
                 <p class="text-gray-600 mb-3"><strong>NCME Bursary</strong> | Project Engineer | 2019</p>
                 <p class="mb-3">Applied Lean Six Sigma and machine learning to optimize production. Reduced reject rates by 3%, improved OEE to 85%.</p>
@@ -656,7 +689,7 @@
                     </div>
                     <div class="hobby-item">
                         <span class="hobby-icon"><i class="fas fa-camera"></i></span>
-                        <span><strong>Landscape Photography</strong> – Capturing nature’s and animals' beauty.</span>
+                        <span><strong>Landscape Photography</strong> – Capturing nature's and animals' beauty.</span>
                     </div>
                     <div class="hobby-item">
                         <span class="hobby-icon"><i class="fas fa-signature"></i></span>
@@ -672,7 +705,8 @@
                     </div>
                 </div>
                 <div class="flex justify-center">
-                    <img src="assets/images/Helicopter.jpg" alt="sporadic" class="w-full max-w-sm h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <!-- FIX: improved alt text from "sporadic" -->
+                    <img src="assets/images/Helicopter.jpg" alt="Dr. Mohammad Harris enjoying leisure activities and travel" class="w-full max-w-sm h-64 object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
                 </div>
             </div>
         </div>
@@ -730,7 +764,7 @@
                     </ul>
                 </div>
             </div>
-            <!-- Formspree Contact Form (Replace YOUR_FORM_ID) -->
+            <!-- Formspree Contact Form -->
             <form class="contact-form" action="https://formspree.io/f/xwpaeqnj" method="POST">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
@@ -797,7 +831,7 @@
                 setTimeout(() => fill.style.width = `${value}%`, 100);
             });
         }
-        // Animate impact counters
+        // Animate impact counters — FIX: changed $ to £ for funding figure
         function animateCounters(section) {
             const counters = section.querySelectorAll('.counter');
             counters.forEach(counter => {
@@ -812,7 +846,7 @@
                         current = target;
                         clearInterval(timer);
                     }
-                    counter.textContent = isCurrency ? `$${Math.floor(current).toLocaleString()}+` : `${Math.floor(current)}+`;
+                    counter.textContent = isCurrency ? `£${Math.floor(current).toLocaleString()}+` : `${Math.floor(current)}+`;
                 }, 10);
             });
         }
@@ -886,8 +920,7 @@
             });
         });
     </script>
-<!-- Default Statcounter code for GitHub Portfolio https://itsharris.github.io/
--->
+<!-- Default Statcounter code for GitHub Portfolio https://itsharris.github.io/ -->
 <script type="text/javascript">
 var sc_project=13182200; 
 var sc_invisible=1; 
