@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://itsharris.github.io/sitemap.xml
