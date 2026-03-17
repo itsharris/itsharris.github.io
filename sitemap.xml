@@ -7,10 +7,3 @@
     <priority>1.0</priority>
   </url>
 </urlset>
-```
-
-**2. Create `robots.txt` in your repo root:**
-```
-User-agent: *
-Allow: /
-Sitemap: https://itsharris.github.io/sitemap.xml
