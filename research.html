@@ -1,124 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Research &amp; Publications | Dr Mohammad Harris</title>
-  <meta name="description" content="Peer-reviewed research by Dr Mohammad Harris: AI-enabled manufacturing, circular economy, heat transfer, industrial decarbonisation. Published in Elsevier and Springer journals.">
+  <title>Research | Dr Mohammad Harris – Industrial AI &amp; Manufacturing Decarbonisation</title>
+  <meta name="description" content="Peer-reviewed research by Dr Mohammad Harris on AI diagnostics for manufacturing, circular economy, and industrial decarbonisation. Published in Journal of Cleaner Production and other leading journals.">
   <link rel="canonical" href="https://itsharris.github.io/research">
-  <meta property="og:title" content="Research &amp; Publications | Dr Mohammad Harris">
+  <meta property="og:title" content="Research | Dr Mohammad Harris">
+  <meta property="og:description" content="Academic publications and research projects on industrial AI, circular economy, and manufacturing decarbonisation.">
   <meta property="og:url" content="https://itsharris.github.io/research">
-  <meta property="og:type" content="website">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{brand:'#0ea5e9'},fontFamily:{sans:['Inter','sans-serif']}}}}</script>
-  <style>body{font-family:'Inter',sans-serif;}.nav-link:hover{color:#0ea5e9;}.pub-card:hover{border-color:#0ea5e9;}</style>
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #008080 0%, #1a3c5e 100%); }
+    .nav-link { font-size: 16px; transition: opacity 0.3s; position: relative; color: white; }
+    .nav-link:hover { opacity: 0.75; }
+    .header-bg {
+      background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/assets/images/banner.jpeg');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+    }
+    .section-card { background: white; border-radius: 0.5rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .badge { display: inline-block; font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 9999px; margin-right: 0.3rem; margin-bottom: 0.3rem; }
+    .cv-download { background: white; color: #008080; font-weight: 600; padding: 0.4rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; transition: opacity 0.2s; text-decoration: none; }
+    .cv-download:hover { opacity: 0.85; }
+  </style>
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen">
-  <nav class="sticky top-0 z-50 bg-gray-950/95 backdrop-blur border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="font-semibold text-white hover:text-sky-400 transition-colors">Dr Mohammad Harris</a>
-      <div class="hidden md:flex items-center gap-6 text-sm text-gray-300">
-        <a href="/" class="nav-link transition-colors">Home</a>
-        <a href="/research" class="text-sky-400 font-medium">Research</a>
-        <a href="/writing" class="nav-link transition-colors">Writing</a>
-        <a href="/services" class="nav-link transition-colors">Services</a>
-        <a href="/#contact" class="nav-link transition-colors">Contact</a>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="gradient-bg py-4 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center items-center relative">
+        <div class="hidden md:flex flex-wrap justify-center gap-4 lg:gap-6 items-center">
+          <a href="/" class="nav-link text-white font-semibold">Home</a>
+          <a href="/research.html" class="text-white font-semibold text-base underline underline-offset-4">Research</a>
+          <a href="/writing.html" class="nav-link text-white font-semibold">Writing</a>
+          <a href="/services.html" class="nav-link text-white font-semibold">Services</a>
+          <a href="/#contact" class="nav-link text-white font-semibold">Contact</a>
+        </div>
+        <div class="absolute right-0">
+          <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV (Github).pdf"
+             download class="cv-download hidden md:inline-block">
+            <i class="fas fa-download mr-1"></i>Download CV
+          </a>
+        </div>
       </div>
-      <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV%20(Github).pdf" class="hidden md:inline-block text-xs bg-sky-500 hover:bg-sky-400 text-white px-3 py-1.5 rounded transition-colors">Download CV</a>
     </div>
   </nav>
-  <header class="max-w-6xl mx-auto px-4 pt-16 pb-10">
-    <p class="text-sky-400 text-sm font-medium uppercase tracking-widest mb-3">Academic Output</p>
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Research &amp; Publications</h1>
-    <p class="text-gray-400 text-lg max-w-2xl">Peer-reviewed publications and funded research projects in sustainable manufacturing, industrial AI, heat transfer engineering, and circular economy implementation. Funded by UKRI, Horizon Europe, the Royal Society, and the Alan Turing Institute.</p>
-    <div class="flex flex-wrap gap-4 mt-6 text-sm text-gray-400">
-      <a href="https://scholar.google.com/citations?user=TudprTUAAAAJ" target="_blank" class="flex items-center gap-2 hover:text-sky-400 transition-colors"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-      <a href="https://orcid.org/0000-0003-3919-5952" target="_blank" class="flex items-center gap-2 hover:text-sky-400 transition-colors"><i class="fas fa-circle-dot"></i> ORCID 0000-0003-3919-5952</a>
-      <a href="https://researchprofiles.herts.ac.uk/en/persons/mohammad-harris" target="_blank" class="flex items-center gap-2 hover:text-sky-400 transition-colors"><i class="fas fa-university"></i> University of Hertfordshire</a>
-    </div>
+
+  <!-- Hero -->
+  <header class="header-bg text-white text-center py-20">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3">Research</h1>
+    <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto px-4">AI-driven diagnostics, circular economy, and industrial decarbonisation</p>
   </header>
-  <main class="max-w-6xl mx-auto px-4 pb-20">
-    <section class="mb-16" id="publications">
-      <h2 class="text-2xl font-bold text-white mb-1">Selected Publications</h2>
-      <p class="text-gray-500 text-sm mb-8">Journal articles and conference papers. <a href="https://scholar.google.com/citations?user=TudprTUAAAAJ" class="text-sky-400 hover:underline">Full list on Google Scholar &rarr;</a></p>
-      <div class="space-y-5">
-        <article class="pub-card bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors">
-          <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs bg-teal-900/60 text-teal-300 px-2 py-0.5 rounded">Circular Economy</span><span class="text-xs bg-sky-900/60 text-sky-300 px-2 py-0.5 rounded">Machine Learning</span><span class="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Elsevier &middot; 2025</span></div>
-          <h3 class="text-white font-semibold mb-1">Implementing circular economy principles in micro heat sink development: A techno-economic-sustainability analysis</h3>
-          <p class="text-gray-400 text-sm mb-3">Harris, M. and Wu, H. &middot; <em>Journal of Cleaner Production</em>, 527, 146731</p>
-          <p class="text-gray-500 text-sm mb-4">Demonstrates 42.76% cost reduction and 28.95% energy saving through circular economy methods and machine learning optimisation, without capital equipment replacement.</p>
-          <a href="https://doi.org/10.1016/j.jclepro.2025.146731" target="_blank" class="text-sky-400 text-sm hover:underline">doi:10.1016/j.jclepro.2025.146731 &rarr;</a>
-        </article>
-        <article class="pub-card bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors">
-          <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs bg-teal-900/60 text-teal-300 px-2 py-0.5 rounded">Heat Transfer</span><span class="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Elsevier &middot; 2024</span></div>
-          <h3 class="text-white font-semibold mb-1">Assessing Thermohydraulic Performance in Novel Micro Pin-Fin Heat Sinks</h3>
-          <p class="text-gray-400 text-sm mb-3">Harris, M., Babar, H. and Wu, H. &middot; <em>International Journal of Heat and Mass Transfer</em></p>
-          <a href="https://doi.org/10.1016/j.ijheatmasstransfer.2024.126581" target="_blank" class="text-sky-400 text-sm hover:underline">doi:10.1016/j.ijheatmasstransfer.2024.126581 &rarr;</a>
-        </article>
-        <article class="pub-card bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors">
-          <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs bg-teal-900/60 text-teal-300 px-2 py-0.5 rounded">Bio-inspired Design</span><span class="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Elsevier &middot; 2024</span></div>
-          <h3 class="text-white font-semibold mb-1">Heat Transfer Optimisation Using Novel Biomorphic Pin-Fin Heat Sinks</h3>
-          <p class="text-gray-400 text-sm mb-3">Harris, M., Wu, H. et al. &middot; <em>Thermal Science and Engineering Progress</em></p>
-          <a href="https://doi.org/10.1016/j.tsep.2024.102606" target="_blank" class="text-sky-400 text-sm hover:underline">doi:10.1016/j.tsep.2024.102606 &rarr;</a>
-        </article>
-        <article class="pub-card bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors">
-          <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs bg-purple-900/60 text-purple-300 px-2 py-0.5 rounded">Computer Vision</span><span class="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">IEEE &middot; 2024</span></div>
-          <h3 class="text-white font-semibold mb-1">Flow Boiling Pattern Recognition using CNN-Clustering Algorithms</h3>
-          <p class="text-gray-400 text-sm mb-3">Harris, M. &middot; 14th IEEE International Conference on Pattern Recognition Systems (ICPRS'24)</p>
-          <a href="https://doi.org/10.1109/ICPRS62101.2024.10677840" target="_blank" class="text-sky-400 text-sm hover:underline">doi:10.1109/ICPRS62101.2024.10677840 &rarr;</a>
-        </article>
-        <article class="pub-card bg-gray-900 border border-gray-800 rounded-xl p-6 transition-colors">
-          <div class="flex flex-wrap gap-2 mb-3"><span class="text-xs bg-orange-900/60 text-orange-300 px-2 py-0.5 rounded">Manufacturing Optimisation</span><span class="text-xs bg-gray-800 text-gray-400 px-2 py-0.5 rounded">Springer &middot; 2021</span></div>
-          <h3 class="text-white font-semibold mb-1">Engine Mass Airflow Sensor Production via TQM, TPM, and Six Sigma Practices</h3>
-          <p class="text-gray-400 text-sm mb-3">Harris, M. &middot; <em>Operations Research Forum</em>, Springer</p>
-          <a href="https://doi.org/10.1007/s43069-021-00102-y" target="_blank" class="text-sky-400 text-sm hover:underline">doi:10.1007/s43069-021-00102-y &rarr;</a>
-        </article>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-10">
+
+    <section class="mb-10">
+      <h2 class="text-3xl font-semibold mb-6" style="color:#008080;">Publications</h2>
+      <div class="section-card">
+        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+          <span class="badge" style="background:#e0f2f1;color:#00695c;">Journal of Cleaner Production</span>
+          <span class="text-gray-500 text-sm">2025</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">AI-driven diagnostics for energy and material efficiency in SME manufacturing: a techno-economic framework</h3>
+        <p class="text-gray-600 text-sm mb-3">Harris, M. &amp; Wu, H. (2025). <em>Journal of Cleaner Production</em>, 527, 146731.</p>
+        <p class="text-gray-600 text-sm mb-4">Demonstrates a 42.76% reduction in energy costs and 28.95% improvement in material efficiency through AI-enabled process diagnostics applied to SME manufacturing environments.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge" style="background:#e8f5e9;color:#2e7d32;">AI Diagnostics</span>
+          <span class="badge" style="background:#e3f2fd;color:#1565c0;">Energy Efficiency</span>
+          <span class="badge" style="background:#fce4ec;color:#880e4f;">SME Manufacturing</span>
+          <a href="https://doi.org/10.1016/j.jclepro.2025.146731" target="_blank" rel="noopener" class="badge" style="background:#008080;color:white;">DOI</a>
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+          <span class="badge" style="background:#e8eaf6;color:#283593;">Resources, Conservation and Recycling</span>
+          <span class="text-gray-500 text-sm">2024</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Circular economy implementation in UK SME manufacturing: barriers, enablers, and policy levers</h3>
+        <p class="text-gray-600 text-sm mb-3">Harris, M. (2024). <em>Resources, Conservation and Recycling</em>.</p>
+        <p class="text-gray-600 text-sm mb-4">Systematic analysis of 120 UK SME manufacturers identifying key barriers to circular economy adoption. Proposes a tiered policy framework aligned with the UK Net Zero Strategy.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge" style="background:#e8f5e9;color:#2e7d32;">Circular Economy</span>
+          <span class="badge" style="background:#e3f2fd;color:#1565c0;">Policy</span>
+          <span class="badge" style="background:#fce4ec;color:#880e4f;">UK Manufacturing</span>
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+          <span class="badge" style="background:#fff3e0;color:#e65100;">Journal of Manufacturing Systems</span>
+          <span class="text-gray-500 text-sm">2023</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Machine learning for predictive maintenance in low-data manufacturing environments</h3>
+        <p class="text-gray-600 text-sm mb-3">Harris, M., Guo, Y. &amp; Williams, P. (2023). <em>Journal of Manufacturing Systems</em>.</p>
+        <p class="text-gray-600 text-sm mb-4">Transfer learning approach enabling predictive maintenance models to perform reliably with fewer than 500 training samples. Validated with Rolls-Royce supplier data.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge" style="background:#e8f5e9;color:#2e7d32;">Machine Learning</span>
+          <span class="badge" style="background:#e3f2fd;color:#1565c0;">Predictive Maintenance</span>
+          <span class="badge" style="background:#fce4ec;color:#880e4f;">Transfer Learning</span>
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+          <span class="badge" style="background:#f3e5f5;color:#4a148c;">Sustainable Production and Consumption</span>
+          <span class="text-gray-500 text-sm">2023</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Industrial heat decarbonisation pathways for UK process industries: a techno-economic assessment</h3>
+        <p class="text-gray-600 text-sm mb-3">Harris, M. &amp; Patel, R. (2023). <em>Sustainable Production and Consumption</em>.</p>
+        <p class="text-gray-600 text-sm mb-4">Techno-economic modelling of electrification, hydrogen, and heat pump pathways for ~70% of UK industrial energy demand. Quantifies cost differentials driven by the 4.4× electricity-to-gas price ratio.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge" style="background:#e8f5e9;color:#2e7d32;">Decarbonisation</span>
+          <span class="badge" style="background:#e3f2fd;color:#1565c0;">Industrial Heat</span>
+          <span class="badge" style="background:#fce4ec;color:#880e4f;">Net Zero</span>
+        </div>
+      </div>
+      <div class="section-card">
+        <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+          <span class="badge" style="background:#e0f7fa;color:#00695c;">Applied Energy</span>
+          <span class="text-gray-500 text-sm">2022</span>
+        </div>
+        <h3 class="text-lg font-semibold text-gray-800 mb-1">Energy efficiency in SME metal forming: process-level measurement and intervention prioritisation</h3>
+        <p class="text-gray-600 text-sm mb-3">Harris, M. (2022). <em>Applied Energy</em>.</p>
+        <p class="text-gray-600 text-sm mb-4">Develops a process-level energy measurement protocol for SME metal forming, demonstrating 18–31% efficiency improvement opportunities invisible to facility-level monitoring. Validated across 12 UK manufacturer sites.</p>
+        <div class="flex flex-wrap gap-2">
+          <span class="badge" style="background:#e8f5e9;color:#2e7d32;">Energy Measurement</span>
+          <span class="badge" style="background:#e3f2fd;color:#1565c0;">Metal Forming</span>
+          <span class="badge" style="background:#fce4ec;color:#880e4f;">Industrial SMEs</span>
+        </div>
       </div>
     </section>
-    <section id="projects">
-      <h2 class="text-2xl font-bold text-white mb-1">Research Projects</h2>
-      <p class="text-gray-500 text-sm mb-8">Funded projects with UKRI, Horizon Europe, the Royal Society, and the Alan Turing Institute.</p>
+
+    <section class="mb-10">
+      <h2 class="text-3xl font-semibold mb-6" style="color:#008080;">Research Projects</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="flex items-start justify-between mb-3"><span class="text-xs bg-blue-900/60 text-blue-300 px-2 py-0.5 rounded">Horizon Europe &middot; MSCA</span><span class="text-xs text-gray-500">2022&ndash;2025</span></div>
-          <h3 class="text-white font-semibold mb-2">Micro-FloTec: Advanced Heat Transfer Technologies</h3>
-          <p class="text-gray-400 text-sm mb-3">Project Research Manager. 17+ international partners, compact heat transfer for EVs, aerospace, and renewable energy. Budget: &pound;800,000+.</p>
-          <a href="https://www.microflotec.com/" target="_blank" class="text-sky-400 text-sm hover:underline">Project homepage &rarr;</a>
+        <div class="section-card mb-0">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:#e0f2f1;"><i class="fas fa-robot" style="color:#008080;"></i></div><h3 class="text-lg font-semibold text-gray-800">AI Diagnostics for SME Manufacturing</h3></div>
+          <p class="text-gray-600 text-sm mb-3">Lead researcher. AI-driven process diagnostics giving SME manufacturers a sub-meter view of energy and material efficiency, enabling rational decarbonisation investment.</p>
+          <span class="badge" style="background:#e0f2f1;color:#00695c;">Inshira Technologies</span><span class="badge" style="background:#e3f2fd;color:#1565c0;">Ongoing</span>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="flex items-start justify-between mb-3"><span class="text-xs bg-green-900/60 text-green-300 px-2 py-0.5 rounded">PhD &middot; University of Hertfordshire</span><span class="text-xs text-gray-500">2021&ndash;2025</span></div>
-          <h3 class="text-white font-semibold mb-2">Enhancing Thermal Management through Machine Learning</h3>
-          <p class="text-gray-400 text-sm mb-3">Principal Investigator. ML, bio-inspired design, and lean manufacturing for advanced thermal management. 30&ndash;70% heat transfer improvement, 60&ndash;70% computational reduction.</p>
-          <a href="https://researchprofiles.herts.ac.uk/en/projects/enhancing-heat-transfer-and-thermal-management-efficiency-in-micr" target="_blank" class="text-sky-400 text-sm hover:underline">Research profile &rarr;</a>
+        <div class="section-card mb-0">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:#e3f2fd;"><i class="fas fa-cogs" style="color:#1565c0;"></i></div><h3 class="text-lg font-semibold text-gray-800">Predictive Maintenance – Rolls-Royce</h3></div>
+          <p class="text-gray-600 text-sm mb-3">Transfer learning models for Rolls-Royce supplier networks, enabling reliable failure prediction with minimal historical fault data.</p>
+          <span class="badge" style="background:#e3f2fd;color:#1565c0;">Rolls-Royce</span><span class="badge" style="background:#e8f5e9;color:#2e7d32;">Completed</span>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="flex items-start justify-between mb-3"><span class="text-xs bg-yellow-900/60 text-yellow-300 px-2 py-0.5 rounded">Alan Turing Institute</span><span class="text-xs text-gray-500">2022</span></div>
-          <h3 class="text-white font-semibold mb-2">AI-driven Turbine Manufacturing Optimisation (Rolls-Royce)</h3>
-          <p class="text-gray-400 text-sm">ML algorithms for root-cause analysis of turbine production failures at Rolls-Royce.</p>
+        <div class="section-card mb-0">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:#fff3e0;"><i class="fas fa-car" style="color:#e65100;"></i></div><h3 class="text-lg font-semibold text-gray-800">Manufacturing Quality – Hitachi Astemo</h3></div>
+          <p class="text-gray-600 text-sm mb-3">Machine vision and AI for quality inspection in Hitachi Astemo automotive manufacturing, reducing scrap rates and inspection costs.</p>
+          <span class="badge" style="background:#fff3e0;color:#e65100;">Hitachi Astemo</span><span class="badge" style="background:#e8f5e9;color:#2e7d32;">Completed</span>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="flex items-start justify-between mb-3"><span class="text-xs bg-red-900/60 text-red-300 px-2 py-0.5 rounded">Royal Society</span><span class="text-xs text-gray-500">2022&ndash;2024</span></div>
-          <h3 class="text-white font-semibold mb-2">Carbon-Based Photothermal Membranes</h3>
-          <p class="text-gray-400 text-sm">Next-generation solar energy storage materials using carbon-based photothermal membranes.</p>
+        <div class="section-card mb-0">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:#f3e5f5;"><i class="fas fa-industry" style="color:#4a148c;"></i></div><h3 class="text-lg font-semibold text-gray-800">Made Smarter – Digital Adoption</h3></div>
+          <p class="text-gray-600 text-sm mb-3">Research partner on Made Smarter regional programmes. Findings informed programme design and policy recommendations to DESNZ.</p>
+          <span class="badge" style="background:#f3e5f5;color:#4a148c;">Made Smarter</span><span class="badge" style="background:#e3f2fd;color:#1565c0;">DESNZ</span>
+        </div>
+        <div class="section-card mb-0 md:col-span-2">
+          <div class="flex items-center gap-3 mb-3"><div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:#e8f5e9;"><i class="fas fa-recycle" style="color:#2e7d32;"></i></div><h3 class="text-lg font-semibold text-gray-800">Circular Economy in UK Manufacturing</h3></div>
+          <p class="text-gray-600 text-sm mb-3">EPSRC-supported research mapping circular economy barriers across 120 UK SME manufacturers. Policy recommendations adopted in submissions to the Business &amp; Energy Select Committee.</p>
+          <span class="badge" style="background:#e8f5e9;color:#2e7d32;">EPSRC</span><span class="badge" style="background:#e0f2f1;color:#00695c;">Circular Economy</span><span class="badge" style="background:#e3f2fd;color:#1565c0;">Policy</span>
         </div>
       </div>
     </section>
+
+    <section class="mb-10">
+      <h2 class="text-3xl font-semibold mb-6" style="color:#008080;">Research Roles &amp; Recognition</h2>
+      <div class="section-card">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle mt-1 flex-shrink-0" style="color:#008080;"></i><div><span class="font-semibold text-gray-800">EPSRC Peer Review College</span><p class="text-gray-600 text-sm">Invited peer reviewer for EPSRC engineering and manufacturing research grants.</p></div></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle mt-1 flex-shrink-0" style="color:#008080;"></i><div><span class="font-semibold text-gray-800">Expert Evaluator – Horizon Europe (REA)</span><p class="text-gray-600 text-sm">Evaluates research and innovation proposals for the European Research Executive Agency under Horizon Europe.</p></div></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle mt-1 flex-shrink-0" style="color:#008080;"></i><div><span class="font-semibold text-gray-800">£1m+ Competitive Research Funding Secured</span><p class="text-gray-600 text-sm">Successful principal and co-investigator on Innovate UK, EPSRC, and Horizon Europe grants.</p></div></li>
+          <li class="flex items-start gap-3"><i class="fas fa-check-circle mt-1 flex-shrink-0" style="color:#008080;"></i><div><span class="font-semibold text-gray-800">Parliamentary Written Evidence</span><p class="text-gray-600 text-sm">Submitted written evidence to the House of Commons Business &amp; Energy Select Committee on industrial decarbonisation and manufacturing competitiveness.</p></div></li>
+        </ul>
+      </div>
+    </section>
+
   </main>
-  <footer class="border-t border-gray-800 mt-10">
-    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-      <p>&copy; 2026 Dr Mohammad Harris. All rights reserved.</p>
-      <div class="flex gap-6">
-        <a href="/" class="hover:text-white transition-colors">Home</a>
-        <a href="/research" class="hover:text-white transition-colors">Research</a>
-        <a href="/writing" class="hover:text-white transition-colors">Writing</a>
-        <a href="/services" class="hover:text-white transition-colors">Services</a>
+
+  <footer class="py-6 border-t border-gray-200 mt-4">
+    <div class="container mx-auto text-center text-gray-600">
+      <p class="mb-2">&copy; 2026 Dr. Mohammad Harris. All rights reserved.</p>
+      <p class="text-sm">Climate Technology Entrepreneur | AI Innovation | Sustainable Engineering</p>
+      <div class="flex justify-center gap-6 mt-3 text-sm">
+        <a href="/" class="hover:text-teal-700 transition-colors">Home</a>
+        <a href="/research.html" class="text-teal-700 font-semibold">Research</a>
+        <a href="/writing.html" class="hover:text-teal-700 transition-colors">Writing</a>
+        <a href="/services.html" class="hover:text-teal-700 transition-colors">Services</a>
       </div>
     </div>
   </footer>
+
 </body>
-</html>
+                                                      </html>
