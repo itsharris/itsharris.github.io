@@ -16,9 +16,13 @@
         });
     }
 
+    // Light (teal) is the default for everyone. Dark mode is opt-in via the
+    // toggle only, and is remembered per browser once chosen. We deliberately
+    // do NOT follow prefers-color-scheme, so first-time visitors always see
+    // the brand palette.
     var stored = null;
     try { stored = localStorage.getItem('theme'); } catch (e) { /* private mode */ }
-    applyTheme(stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
+    applyTheme(stored === 'dark' ? 'dark' : 'light');
 
     document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
         btn.addEventListener('click', function () {
