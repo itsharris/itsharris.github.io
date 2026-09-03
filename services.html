@@ -1,104 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Dr Mohammad Harris &ndash; Industrial AI Consultant, London</title>
+  <title>Services | Dr Mohammad Harris – Industrial AI Consulting, London</title>
   <meta name="description" content="Consulting, advisory, and speaking services from Dr Mohammad Harris. Industrial AI diagnostics, manufacturing decarbonisation, and circular economy implementation for UK manufacturers.">
   <link rel="canonical" href="https://itsharris.github.io/services">
-  <meta property="og:title" content="Services | Dr Mohammad Harris &ndash; Industrial AI Consultant">
-  <meta property="og:url" content="https://itsharris.github.io/services">
   <meta name="robots" content="index, follow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>tailwind.config={theme:{extend:{colors:{brand:'#0ea5e9'},fontFamily:{sans:['Inter','sans-serif']}}}}</script>
-  <style>body{font-family:'Inter',sans-serif;}.nav-link:hover{color:#0ea5e9;}</style>
+  <style>
+    body { font-family: 'Roboto', sans-serif; }
+    .gradient-bg { background: linear-gradient(135deg, #008080 0%, #1a3c5e 100%); }
+    .nav-link { font-size: 16px; transition: opacity 0.3s; position: relative; color: white; }
+    .nav-link:hover { opacity: 0.75; }
+    .header-bg { background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/assets/images/banner.jpeg'); background-size: cover; background-position: center center; background-repeat: no-repeat; }
+    .section-card { background: white; border-radius: 0.5rem; box-shadow: 0 4px 16px rgba(0,0,0,0.10); padding: 1.5rem; margin-bottom: 1.5rem; }
+    .service-card { background: white; border-radius: 0.5rem; box-shadow: 0 4px 16px rgba(0,0,0,0.08); padding: 1.5rem; transition: box-shadow 0.2s, transform 0.2s; }
+    .service-card:hover { box-shadow: 0 8px 24px rgba(0,128,128,0.15); transform: translateY(-2px); }
+    .cv-download { background: white; color: #008080; font-weight: 600; padding: 0.4rem 1rem; border-radius: 0.375rem; font-size: 0.875rem; transition: opacity 0.2s; text-decoration: none; }
+    .cv-download:hover { opacity: 0.85; }
+  </style>
 </head>
-<body class="bg-gray-950 text-gray-100 min-h-screen">
-  <nav class="sticky top-0 z-50 bg-gray-950/95 backdrop-blur border-b border-gray-800">
-    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="/" class="font-semibold text-white hover:text-sky-400 transition-colors">Dr Mohammad Harris</a>
-      <div class="hidden md:flex items-center gap-6 text-sm text-gray-300">
-        <a href="/" class="nav-link transition-colors">Home</a>
-        <a href="/research" class="nav-link transition-colors">Research</a>
-        <a href="/writing" class="nav-link transition-colors">Writing</a>
-        <a href="/services" class="text-sky-400 font-medium">Services</a>
-        <a href="/#contact" class="nav-link transition-colors">Contact</a>
+<body class="bg-gray-100 min-h-screen">
+  <nav class="gradient-bg py-4 shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-4">
+      <div class="flex justify-center items-center relative">
+        <div class="hidden md:flex flex-wrap justify-center gap-4 lg:gap-6 items-center">
+          <a href="/" class="nav-link text-white font-semibold">Home</a>
+          <a href="/research.html" class="nav-link text-white font-semibold">Research</a>
+          <a href="/writing.html" class="nav-link text-white font-semibold">Writing</a>
+          <a href="/services.html" class="text-white font-semibold text-base underline underline-offset-4">Services</a>
+          <a href="/#contact" class="nav-link text-white font-semibold">Contact</a>
+        </div>
+        <div class="absolute right-0">
+          <a href="https://raw.githubusercontent.com/itsharris/itsharris.github.io/main/assets/images/Mohammad_Harris_CV (Github).pdf" download class="cv-download hidden md:inline-block">
+            <i class="fas fa-download mr-1"></i>Download CV
+          </a>
+        </div>
       </div>
-      <a href="mailto:harris@inshira.co.uk" class="hidden md:inline-block text-xs bg-sky-500 hover:bg-sky-400 text-white px-3 py-1.5 rounded transition-colors">Get in touch</a>
     </div>
   </nav>
-  <header class="max-w-6xl mx-auto px-4 pt-16 pb-10">
-    <p class="text-sky-400 text-sm font-medium uppercase tracking-widest mb-3">What I Do</p>
-    <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Services</h1>
-    <p class="text-gray-400 text-lg max-w-2xl">PhD-level engineering expertise applied to real manufacturing problems &mdash; diagnostics, decarbonisation strategy, and technology deployment for UK and European manufacturers and climate ventures.</p>
+
+  <header class="header-bg text-white text-center py-20">
+    <h1 class="text-4xl md:text-5xl font-bold mb-3">Services</h1>
+    <p class="text-lg md:text-xl opacity-90 max-w-2xl mx-auto px-4">PhD-level engineering expertise applied to real manufacturing problems</p>
   </header>
-  <main class="max-w-6xl mx-auto px-4 pb-20">
-    <section class="mb-16">
-      <div class="bg-gradient-to-br from-sky-950/60 to-teal-950/40 border border-sky-800/50 rounded-2xl p-8 mb-8">
-        <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+
+  <main class="container mx-auto px-4 py-10">
+
+    <section class="mb-10">
+      <div class="section-card" style="border-left: 4px solid #008080;">
+        <div class="flex flex-wrap items-start justify-between gap-4 mb-3">
           <div>
-            <h2 class="text-2xl font-bold text-white mb-1">Inshira Technologies</h2>
-            <p class="text-sky-400 text-sm">AI-enabled manufacturing diagnostics for SMEs</p>
+            <h2 class="text-2xl font-bold text-gray-800 mb-1">Inshira Technologies</h2>
+            <p class="text-sm font-semibold" style="color:#008080;">AI-enabled manufacturing diagnostics for SMEs</p>
           </div>
-          <a href="https://www.inshira.co.uk/" target="_blank" class="text-sm text-sky-400 hover:underline">inshira.co.uk &rarr;</a>
+          <a href="https://www.inshira.co.uk/" target="_blank" rel="noopener" class="text-sm font-semibold hover:opacity-75" style="color:#008080;">inshira.co.uk <i class="fas fa-arrow-right ml-1"></i></a>
         </div>
-        <p class="text-gray-300 mb-4">Inshira builds AI diagnostic tools that give SME manufacturers a process-level view of their energy consumption, material waste, and production inefficiency &mdash; the information they need to target decarbonisation investment rationally rather than speculatively.</p>
-        <p class="text-gray-400 text-sm">Current focus: UK and European manufacturers. Early pilots in thermal component manufacturing, precision engineering, and food processing.</p>
+        <p class="text-gray-600 mb-3">Inshira builds AI diagnostic tools that give SME manufacturers a process-level view of their energy consumption, material waste, and production inefficiency — the information they need to target decarbonisation investment rationally rather than speculatively.</p>
+        <p class="text-gray-500 text-sm">Current focus: UK and European manufacturers. Early pilots in thermal component manufacturing, precision engineering, and food processing.</p>
       </div>
     </section>
-    <section class="mb-16">
-      <h2 class="text-xl font-bold text-white mb-8">Consulting &amp; Advisory</h2>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="w-10 h-10 bg-sky-900/50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-industry text-sky-400"></i></div>
-          <h3 class="text-white font-semibold mb-2">Manufacturing Diagnostics</h3>
-          <p class="text-gray-400 text-sm">Process-level analysis of energy consumption, material flows, and production inefficiency. Identifies where costs and emissions arise before investment decisions are made.</p>
+
+    <section class="mb-10">
+      <h2 class="text-3xl font-semibold mb-6" style="color:#008080;">Consulting &amp; Advisory</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="service-card">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:#e0f2f1;"><i class="fas fa-industry" style="color:#008080;"></i></div>
+          <h3 class="font-semibold text-gray-800 mb-2">Manufacturing Diagnostics</h3>
+          <p class="text-gray-600 text-sm">Process-level analysis of energy consumption, material flows, and production inefficiency. Identifies where costs and emissions arise before investment decisions are made.</p>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="w-10 h-10 bg-teal-900/50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-leaf text-teal-400"></i></div>
-          <h3 class="text-white font-semibold mb-2">Decarbonisation Strategy</h3>
-          <p class="text-gray-400 text-sm">Evidence-based decarbonisation roadmaps for SME manufacturers &mdash; from baseline measurement to prioritised interventions and green finance readiness.</p>
+        <div class="service-card">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:#e8f5e9;"><i class="fas fa-leaf" style="color:#2e7d32;"></i></div>
+          <h3 class="font-semibold text-gray-800 mb-2">Decarbonisation Strategy</h3>
+          <p class="text-gray-600 text-sm">Evidence-based decarbonisation roadmaps for SME manufacturers — from baseline measurement to prioritised interventions and green finance readiness.</p>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-robot text-purple-400"></i></div>
-          <h3 class="text-white font-semibold mb-2">AI for Industrial Systems</h3>
-          <p class="text-gray-400 text-sm">Technical advisory on deploying machine learning in manufacturing environments with limited data infrastructure. Applied research with Rolls-Royce and Hitachi Astemo.</p>
+        <div class="service-card">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:#f3e5f5;"><i class="fas fa-robot" style="color:#4a148c;"></i></div>
+          <h3 class="font-semibold text-gray-800 mb-2">AI for Industrial Systems</h3>
+          <p class="text-gray-600 text-sm">Technical advisory on deploying machine learning in manufacturing environments. Applied research with Rolls-Royce and Hitachi Astemo.</p>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-recycle text-orange-400"></i></div>
-          <h3 class="text-white font-semibold mb-2">Circular Economy Implementation</h3>
-          <p class="text-gray-400 text-sm">Practical circular economy analysis for manufacturing processes &mdash; material flow mapping, waste identification, and techno-economic modelling of alternatives.</p>
+        <div class="service-card">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:#fff3e0;"><i class="fas fa-recycle" style="color:#e65100;"></i></div>
+          <h3 class="font-semibold text-gray-800 mb-2">Circular Economy Implementation</h3>
+          <p class="text-gray-600 text-sm">Material flow mapping, waste identification, and techno-economic modelling of circular economy alternatives for manufacturing processes.</p>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="w-10 h-10 bg-yellow-900/50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-magnifying-glass-chart text-yellow-400"></i></div>
-          <h3 class="text-white font-semibold mb-2">Research &amp; Grant Support</h3>
-          <p class="text-gray-400 text-sm">EPSRC Peer Review College member. Expert Evaluator for Horizon Europe (REA). Over &pound;1m in competitive research funding secured. Advisory on Innovate UK, Horizon, and UKRI applications.</p>
+        <div class="service-card">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:#e3f2fd;"><i class="fas fa-magnifying-glass-chart" style="color:#1565c0;"></i></div>
+          <h3 class="font-semibold text-gray-800 mb-2">Research &amp; Grant Support</h3>
+          <p class="text-gray-600 text-sm">EPSRC Peer Review College member. Expert Evaluator for Horizon Europe (REA). Over £1m in competitive research funding secured.</p>
         </div>
-        <div class="bg-gray-900 border border-gray-800 rounded-xl p-6">
-          <div class="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center mb-4"><i class="fas fa-microphone text-green-400"></i></div>
-          <h3 class="text-white font-semibold mb-2">Speaking &amp; Panels</h3>
-          <p class="text-gray-400 text-sm">Available for podcast interviews, conference panels, and keynote talks on industrial AI, manufacturing decarbonisation, and climate tech venture building.</p>
+        <div class="service-card">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style="background:#e8f5e9;"><i class="fas fa-microphone" style="color:#2e7d32;"></i></div>
+          <h3 class="font-semibold text-gray-800 mb-2">Speaking &amp; Panels</h3>
+          <p class="text-gray-600 text-sm">Available for podcast interviews, conference panels, and keynote talks on industrial AI, manufacturing decarbonisation, and climate tech venture building.</p>
         </div>
       </div>
     </section>
-    <section class="bg-gray-900 border border-gray-800 rounded-2xl p-8 text-center">
-      <h2 class="text-2xl font-bold text-white mb-3">Start a conversation</h2>
-      <p class="text-gray-400 mb-6 max-w-lg mx-auto">Open to consulting engagements, advisory board roles, research collaborations, and speaking. Based in London, working with manufacturers and climate ventures across the UK and Europe.</p>
-      <a href="mailto:harris@inshira.co.uk" class="inline-block bg-sky-500 hover:bg-sky-400 text-white font-medium px-6 py-3 rounded-lg transition-colors">harris@inshira.co.uk</a>
+
+    <section class="section-card text-center py-10">
+      <h2 class="text-2xl font-bold text-gray-800 mb-3">Start a conversation</h2>
+      <p class="text-gray-600 mb-6 max-w-lg mx-auto">Open to consulting engagements, advisory board roles, research collaborations, and speaking. Based in London, working with manufacturers and climate ventures across the UK and Europe.</p>
+      <a href="mailto:harris@inshira.co.uk" class="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-white font-semibold hover:opacity-90" style="background:#008080;">
+        <i class="fas fa-envelope"></i> harris@inshira.co.uk
+      </a>
     </section>
+
   </main>
-  <footer class="border-t border-gray-800 mt-10">
-    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
-      <p>&copy; 2026 Dr Mohammad Harris. All rights reserved.</p>
-      <div class="flex gap-6">
-        <a href="/" class="hover:text-white transition-colors">Home</a>
-        <a href="/research" class="hover:text-white transition-colors">Research</a>
-        <a href="/writing" class="hover:text-white transition-colors">Writing</a>
-        <a href="/services" class="hover:text-white transition-colors">Services</a>
+
+  <footer class="py-6 border-t border-gray-200 mt-4">
+    <div class="container mx-auto text-center text-gray-600">
+      <p class="mb-2">&copy; 2026 Dr. Mohammad Harris. All rights reserved.</p>
+      <p class="text-sm">Climate Technology Entrepreneur | AI Innovation | Sustainable Engineering</p>
+      <div class="flex justify-center gap-6 mt-3 text-sm">
+        <a href="/" class="hover:text-teal-700 transition-colors">Home</a>
+        <a href="/research.html" class="hover:text-teal-700 transition-colors">Research</a>
+        <a href="/writing.html" class="hover:text-teal-700 transition-colors">Writing</a>
+        <a href="/services.html" class="text-teal-700 font-semibold">Services</a>
       </div>
     </div>
   </footer>
