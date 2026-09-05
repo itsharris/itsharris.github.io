@@ -98,10 +98,25 @@ nav.site-nav {
     font-weight: 700;
 }
 
-#mobile-menu { transition: max-height 0.3s ease-in-out; max-height: 0; }
-#mobile-menu.open { max-height: 900px; }
+/* The menu is a real vertical stack. Tailwind's `flex-col` alone does nothing
+   here because removing `hidden` leaves the div at display:block, which let the
+   links flow inline and wrap into a grid. Both rules below are load-bearing. */
+#mobile-menu { max-height: 0; overflow: hidden; }
+#mobile-menu.open {
+    display: flex !important;
+    flex-direction: column;
+    max-height: 900px;
+}
+@media (min-width: 768px) {
+    #mobile-menu.open { display: none !important; }
+}
 
-.nav-link-mobile { font-size: 16px; transition: background-color 0.3s ease, color 0.3s ease; }
+.nav-link-mobile {
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 .nav-link-mobile:hover,
 .nav-link-mobile.active,
 .nav-link-mobile[aria-current="page"] {
@@ -148,6 +163,10 @@ nav.site-nav {
 
 .header-bg h1,
 .header-bg p { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+
+/* Keep header text off the screen edges on narrow viewports. */
+.header-bg { padding-left: 1rem; padding-right: 1rem; }
+.header-bg > * { max-width: 100%; }
 
 /* Cards and sections ---------------------------------------------------- */
 .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
@@ -364,6 +383,18 @@ footer.site-footer a:hover { color: var(--accent-hover) !important; }
 @media (max-width: 768px) {
     .nav-link:hover { transform: none; }
     .counter { font-size: 2rem; }
+    /* Hero calls to action stack rather than running off the screen. */
+    .header-bg .cv-download {
+        display: block;
+        width: 100%;
+        max-width: 22rem;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-bg h1 { font-size: 2rem; line-height: 1.15; }
+    .badge { font-size: 13px; padding: 3px 10px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
