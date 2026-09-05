@@ -323,6 +323,50 @@ nav.site-nav {
 }
 .contact-form button:hover { background-color: var(--accent-hover); }
 
+/* Newsletter -------------------------------------------------------------- */
+.newsletter {
+    background: linear-gradient(135deg, var(--accent) 0%, #1a3c5e 100%);
+    border-radius: 0.5rem;
+    padding: 2rem 1.75rem;
+    color: #fff;
+}
+.newsletter h2, .newsletter h3, .newsletter p { color: #fff !important; }
+.newsletter h2::after { background-color: rgba(255, 255, 255, 0.5); }
+.newsletter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+    max-width: 560px;
+}
+.newsletter-form input[type="email"] {
+    flex: 1 1 260px;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: #1f2937;
+    background: #fff;
+}
+.newsletter-form button {
+    flex: 0 0 auto;
+    background: #fff;
+    color: var(--accent);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.newsletter-form button:hover { background: var(--accent-hover); color: #fff; }
+.newsletter-note { font-size: 0.85rem; opacity: 0.85; margin-top: 0.85rem; }
+@media (max-width: 520px) {
+    .newsletter-form input[type="email"],
+    .newsletter-form button { flex: 1 1 100%; }
+}
+
 /* Social icons ---------------------------------------------------------- */
 .social-icon { transition: color 0.3s ease, transform 0.3s ease; color: var(--accent); }
 .social-icon:hover { color: var(--accent-hover); transform: scale(1.2); }
